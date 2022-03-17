@@ -9,11 +9,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'kevinhwang91/rnvimr'
   Plug 'lukas-reineke/indent-blankline.nvim'
   Plug 'ethanholz/nvim-lastplace'
-  Plug 'ycm-core/YouCompleteMe'
   Plug 'preservim/nerdcommenter'
   Plug 'vimwiki/vimwiki'
   Plug 'tools-life/taskwiki'
   Plug 'kien/ctrlp.vim'
-  
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 call plug#end()
 
