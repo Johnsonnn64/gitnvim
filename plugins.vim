@@ -4,10 +4,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'jiangmiao/auto-pairs'
   Plug 'catppuccin/nvim', {'as': 'catppuccin'}
   Plug 'nvim-lualine/lualine.nvim'
-  Plug 'kdheepak/tabline.nvim'
   Plug 'ryanoasis/vim-devicons'
-  Plug 'preservim/nerdtree'
-  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+  Plug 'kyazdani42/nvim-web-devicons'
+  Plug 'kyazdani42/nvim-tree.lua'
   Plug 'mbbill/undotree'
   Plug 'lukas-reineke/indent-blankline.nvim'
   Plug 'ethanholz/nvim-lastplace'
@@ -16,6 +15,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'godlygeek/tabular'
   Plug 'preservim/vim-markdown'
+  Plug 'romgrk/barbar.nvim'
+  Plug 'dkarter/bullets.vim'
 
 call plug#end()
 
