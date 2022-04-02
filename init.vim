@@ -32,14 +32,13 @@ map <leader><leader> :setlocal spell! spelllang=en_us<CR>
 autocmd FileType * setlocal formatoptions-=cro
 " filetypes
 autocmd BufRead,BufNewFile ~/personal/school/* set filetype=markdown
+autocmd BufRead,BufNewFile ~/.local/share/calcurse/notes/* set filetype=markdown
 autocmd BufWritePre * %s/\s\+$//e
 " movement
 map <silent> <leader>h :wincmd h<CR>
 map <silent> <leader>j :wincmd j<CR>
 map <silent> <leader>k :wincmd k<CR>
 map <silent> <leader>l :wincmd l<CR>
-map <silent> <leader>q :quit<CR>
-map <silent> <leader>Q :quit!<CR>
 map <silent> <leader>bq :bd<CR>
 nmap <silent> tt :bnext<CR>
 nmap <silent> tT :bprevious<CR>
@@ -170,3 +169,4 @@ vmap <silent> <C-p> :BulletDemoteVisual <CR>
 vmap <silent> <C-t> :BulletPromoteVisual <CR>
 map <silent> <leader>x :ToggleCheckbox <CR>
 nmap <silent> o :InsertNewBullet <CR>
+imap <silent> <CR> <esc>:InsertNewBullet <CR>
