@@ -39,7 +39,7 @@ map <silent> <leader>h :wincmd h<CR>
 map <silent> <leader>j :wincmd j<CR>
 map <silent> <leader>k :wincmd k<CR>
 map <silent> <leader>l :wincmd l<CR>
-map <silent> <leader>bq :bd<CR>
+map <silent> <leader>bd :bd<CR>
 nmap <silent> tt :bnext<CR>
 nmap <silent> tT :bprevious<CR>
 map <silent> <Up> :resize +2 <CR>
@@ -161,6 +161,7 @@ source ~/.config/nvim/tree.lua
 " bullets
 let g:bullets_enabled_file_types = [ 'markdown' ]
 let g:bullets_set_mappings = 0
+inoremap', '<cr>', '<C-]><C-R>=<SID>insert_new_bullet()<cr>
 imap <silent> <C-p> <esc>:BulletDemote <CR>i
 imap <silent> <C-t> <esc>:BulletPromote <CR>i
 nmap <silent> >> :BulletDemote <CR>
@@ -169,4 +170,5 @@ vmap <silent> <C-p> :BulletDemoteVisual <CR>
 vmap <silent> <C-t> :BulletPromoteVisual <CR>
 map <silent> <leader>x :ToggleCheckbox <CR>
 nmap <silent> o :InsertNewBullet <CR>
-imap <silent> <CR> <esc>:InsertNewBullet <CR>
+vnoremap gN :RenumberSelection<cr>
+nnoremap gN :RenumberList<cr>
