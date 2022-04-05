@@ -161,7 +161,7 @@ source ~/.config/nvim/tree.lua
 " bullets
 let g:bullets_enabled_file_types = [ 'markdown' ]
 let g:bullets_set_mappings = 0
-inoremap', '<cr>', '<C-]><C-R>=<SID>insert_new_bullet()<cr>
+"inoremap <cr> :insert_new_bullet<CR>
 imap <silent> <C-p> <esc>:BulletDemote <CR>i
 imap <silent> <C-t> <esc>:BulletPromote <CR>i
 nmap <silent> >> :BulletDemote <CR>
