@@ -1,17 +1,18 @@
 require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
   auto_reload_on_write = true,
   disable_netrw = false,
-  hide_root_folder = false,
-  hijack_cursor = false,
+  hide_root_folder = true,
+  hijack_cursor = true,
   hijack_netrw = true,
   hijack_unnamed_buffer_when_opening = false,
-  ignore_buffer_on_setup = false,
-  open_on_setup = false,
-  open_on_tab = false,
+  ignore_buffer_on_setup = true,
+  open_on_setup = true,
+  open_on_setup_file = true,
+  open_on_tab = true,
   sort_by = "name",
-  update_cwd = false,
+  update_cwd = true,
   view = {
-    width = 30,
+    width = 28,
     height = 30,
     side = "left",
     preserve_window_proportions = false,
@@ -52,7 +53,7 @@ require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
   },
   filters = {
     dotfiles = false,
-    custom = {},
+    custom = {"^\\.git"},
     exclude = {},
   },
   git = {
@@ -66,7 +67,7 @@ require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
       global = false,
     },
     open_file = {
-      quit_on_open = true,
+      quit_on_open = false,
       resize_window = true,
       window_picker = {
         enable = true,

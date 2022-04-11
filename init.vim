@@ -23,6 +23,7 @@ set expandtab
 set smartindent
 set splitbelow splitright
 set number relativenumber
+set shortmess+=A
 filetype plugin indent on
 syntax on
 set clipboard=unnamedplus
@@ -54,7 +55,6 @@ inoremap <silent> <C-j> <Esc>:m .+1<CR>==gi
 inoremap <silent> <C-k> <Esc>:m .-2<CR>==gi
 vnoremap <silent> <C-j> :m '>+1<CR>gv=gv
 vnoremap <silent> <C-k> :m '<-2<CR>gv=gv
-map <silent> <leader>nn :noh<CR>
 imap kj <Esc>
 " edit config
 map <silent> <leader>np :tabnew ~/.config/nvim/plugins.vim <CR>
@@ -71,59 +71,22 @@ map <leader>u :UndotreeToggle<CR>
 set undodir=~/.local/nvim/undodir
 set undofile
 let g:undotree_ShortIndicators = 1
+if !exists('g:undotree_WindowLayout')
+  let g:undotree_WindowLayout = 4
+endif
+if !exists('g:undotree_SetFocusWhenToggle')
+    let g:undotree_SetFocusWhenToggle = 1
+endif
 
 " nvim tree
-set termguicolors
+source ~/.config/nvim/ntree.vim
 source ~/.config/nvim/ntree.lua
-let g:nvim_tree_indent_markers = 1
-let g:nvim_tree_git_hl = 1
-let g:nvim_tree_highlight_opened_files = 1 "0 by default, will enable folder and file icon highlight for opened files/directories.
-let g:nvim_tree_root_folder_modifier = ':~' "This is the default. See :help filename-modifiers for more options
-let g:nvim_tree_add_trailing = 1 "0 by default, append a trailing slash to folder names
-let g:nvim_tree_group_empty = 1 " 0 by default, compact folders that only contain a single folder into one node in the file tree
-let g:nvim_tree_icon_padding = ' ' "one space by default, used for rendering the space between the icon and the filename. Use with caution, it could break rendering if you set an empty string depending on your font.
-let g:nvim_tree_symlink_arrow = ' >> ' " defaults to ' ➛ '. used as a separator between symlinks' source and target.
-let g:nvim_tree_respect_buf_cwd = 1 "0 by default, will change cwd of nvim-tree to that of new buffer's when opening nvim-tree.
-let g:nvim_tree_create_in_closed_folder = 1 "0 by default, When creating files, sets the path of a file when cursor is on a closed folder to the parent folder when 0, and inside the folder when 1.
-let g:nvim_tree_special_files = { 'README.md': 1, 'Makefile': 1, 'MAKEFILE': 1 } " List of filenames that gets highlighted with NvimTreeSpecialFile
-let g:nvim_tree_show_icons = {
-    \ 'git': 1,
-    \ 'folders': 0,
-    \ 'files': 0,
-    \ 'folder_arrows': 0,
-    \ }
-let g:nvim_tree_icons = {
-    \ 'default': "",
-    \ 'symlink': "",
-    \ 'git': {
-    \   'unstaged': "✗",
-    \   'staged': "✓",
-    \   'unmerged': "",
-    \   'renamed': "➜",
-    \   'untracked': "★",
-    \   'deleted': "",
-    \   'ignored': "◌"
-    \   },
-    \ 'folder': {
-    \   'arrow_open': "",
-    \   'arrow_closed': "",
-    \   'default': "",
-    \   'open': "",
-    \   'empty': "",
-    \   'empty_open': "",
-    \   'symlink': "",
-    \   'symlink_open': "",
-    \   }
-    \ }
-highlight NvimTreeNormal guibg=none
-nnoremap <leader>r :NvimTreeRefresh<CR>
-nnoremap <leader>nf :NvimTreeFindFile<CR>
 
 " vim-lastplace
-lua require'nvim-lastplace'.setup{}
-let g:lastplace_ignore_buftype = "quickfix,nofile,help"
-let g:lastplace_ignore_filetype = "gitcommit,gitrebase,svn,hgcommit"
-let g:lastplace_open_folds = 1
+"lua require'nvim-lastplace'.setup{}
+"let g:lastplace_ignore_buftype = "quickfix,nofile,help"
+"let g:lastplace_ignore_filetype = "gitcommit,gitrebase,svn,hgcommit"
+"let g:lastplace_open_folds = 1
 
 " notes
 source ~/.config/nvim/notes.vim
@@ -155,20 +118,24 @@ let bufferline.animation = v:false
 let bufferline.icon_close_tab = ''
 let bufferline.icon_close_tab_modified = '+'
 let bufferline.icon_pinned = '車'
+let bufferline.insert_at_end = v:true
+let bufferline.exclude_name = ['']
+"let bufferline.no_name_title = '[no]'
+let bufferline.maximum_padding = 3
 map <silent> <leader>bo :BufferOrderByBufferNumber<CR>
-source ~/.config/nvim/tree.lua
+autocmd VimEnter * :lua require('bufferline.state').set_offset(28, 'FileTree')
 
 " bullets
 let g:bullets_enabled_file_types = [ 'markdown' ]
-let g:bullets_set_mappings = 0
-"inoremap <cr> :insert_new_bullet<CR>
-imap <silent> <C-p> <esc>:BulletDemote <CR>i
-imap <silent> <C-t> <esc>:BulletPromote <CR>i
-nmap <silent> >> :BulletDemote <CR>
-nmap <silent> << :BulletPromote <CR>
-vmap <silent> <C-p> :BulletDemoteVisual <CR>
-vmap <silent> <C-t> :BulletPromoteVisual <CR>
-map <silent> <leader>x :ToggleCheckbox <CR>
-nmap <silent> o :InsertNewBullet <CR>
-vnoremap gN :RenumberSelection<cr>
-nnoremap gN :RenumberList<cr>
+let g:bullets_set_mappings = 1
+"imap <silent> <C-p> <esc>:BulletDemote <CR>i
+"imap <silent> <C-t> <esc>:BulletPromote <CR>i
+"nmap <silent> >> :BulletDemote <CR>
+"nmap <silent> << :BulletPromote <CR>
+"vmap <silent> <C-p> :BulletDemoteVisual <CR>
+"vmap <silent> <C-t> :BulletPromoteVisual <CR>
+"map <silent> <leader>x :ToggleCheckbox <CR>
+"nmap <silent> o :InsertNewBullet <CR>
+"vnoremap gN :RenumberSelection<cr>
+"nnoremap gN :RenumberList<cr>
+
