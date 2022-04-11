@@ -79,8 +79,8 @@ if !exists('g:undotree_SetFocusWhenToggle')
 endif
 
 " nvim tree
-source ~/.config/nvim/ntree.vim
 source ~/.config/nvim/ntree.lua
+source ~/.config/nvim/ntree.vim
 
 " vim-lastplace
 "lua require'nvim-lastplace'.setup{}
