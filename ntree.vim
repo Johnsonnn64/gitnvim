@@ -1,8 +1,5 @@
-set termguicolors
-let g:nvim_tree_indent_markers = 1
 let g:nvim_tree_git_hl = 1
-let g:nvim_tree_root_folder_modifier = ''
-let g:nvim_tree_highlight_opened_files = 1 "0 by default, will enable folder and file icon highlight for opened files/directories.
+let g:nvim_tree_highlight_opened_files = 3 "0 by default, will enable folder and file icon highlight for opened files/directories.
 let g:nvim_tree_add_trailing = 1 "0 by default, append a trailing slash to folder names
 let g:nvim_tree_group_empty = 1 " 0 by default, compact folders that only contain a single folder into one node in the file tree
 let g:nvim_tree_icon_padding = ' ' "one space by default, used for rendering the space between the icon and the filename. Use with caution, it could break rendering if you set an empty string depending on your font.
@@ -12,9 +9,9 @@ let g:nvim_tree_create_in_closed_folder = 0 "0 by default, When creating files, 
 let g:nvim_tree_special_files = { 'README.md': 1, 'Makefile': 1, 'MAKEFILE': 1 } " List of filenames that gets highlighted with NvimTreeSpecialFile
 let g:nvim_tree_show_icons = {
     \ 'git': 1,
-    \ 'folders': 0,
-    \ 'files': 0,
-    \ 'folder_arrows': 0,
+    \ 'folders': 1,
+    \ 'files': 1,
+    \ 'folder_arrows': 1,
     \ }
 let g:nvim_tree_icons = {
     \ 'default': "",
@@ -42,17 +39,10 @@ let g:nvim_tree_icons = {
 highlight NvimTreeNormal guibg=none
 "autocmd BufAdd * silent if (bufname('#') == '') | bd 1 | endif
 autocmd BufEnter * silent if (winnr("$") == 1 && &filetype == "nvimtree") | q | endif
-autocmd BufEnter * silent if bufname('#') =~ 'Nvim_tree_\d\+' && bufname('%') !~ 'Nvim_tree_\d\+' && winnr('$') > 1 |
-    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+"autocmd BufEnter * silent if bufname('#') =~ 'Nvim_tree_\d\+' && bufname('%') !~ 'Nvim_tree_\d\+' && winnr('$') > 1 |
+    "\ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 nnoremap <leader>r :NvimTreeRefresh<CR>
 nnoremap <leader>nf :NvimTreeFindFile<CR>
-function! Treeon()
-    NvimTreeOpen
-    lua require('bufferline.state').set_offset(29, 'NvimTree')
-endfunction
-function! Treeoff()
-    NvimTreeClose
-    lua require('bufferline.state').set_offset(0)
-endfunction
-map <silent><leader>f :call Treeon()<CR>
-map <silent><leader>d :call Treeoff()<CR>
+nnoremap <leader>f :NvimTreeToggle<CR>
+
+source ~/.config/nvim/ntree.lua

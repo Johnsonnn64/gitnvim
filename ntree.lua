@@ -32,7 +32,7 @@ require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
     auto_open = true,
   },
   update_focused_file = {
-    enable = false,
+    enable = true,
     update_cwd = false,
     ignore_list = {},
   },
@@ -49,6 +49,16 @@ require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
       info = "",
       warning = "",
       error = "",
+    },
+  },
+  renderer = {
+    indent_markers = {
+      enable = true,
+      icons = {
+        corner = "└ ",
+        edge = "│ ",
+        none = "  ",
+      },
     },
   },
   filters = {
@@ -78,10 +88,6 @@ require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
         },
       },
     },
-  },
-  trash = {
-    cmd = "trash",
-    require_confirm = true,
   },
   log = {
     enable = false,

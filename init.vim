@@ -11,6 +11,7 @@ let mapleader=" "
 set noshowmode
 set encoding=utf-8
 set showmatch
+set termguicolors
 set ignorecase
 set smartcase
 set hlsearch
@@ -41,8 +42,8 @@ map <silent> <leader>j :wincmd j<CR>
 map <silent> <leader>k :wincmd k<CR>
 map <silent> <leader>l :wincmd l<CR>
 map <silent> <leader>bd :bd<CR>
-nmap <silent> tt :bnext<CR>
-nmap <silent> tT :bprevious<CR>
+nmap <silent> tt :BufferLineCycleNext<CR>
+nmap <silent> tT :BufferLineCyclePrevious<CR>
 map <silent> <Up> :resize +2 <CR>
 map <silent> <Down> :resize -2 <CR>
 map <silent> <C-Up> :vertical resize +2 <CR>
@@ -79,14 +80,7 @@ if !exists('g:undotree_SetFocusWhenToggle')
 endif
 
 " nvim tree
-source ~/.config/nvim/ntree.lua
 source ~/.config/nvim/ntree.vim
-
-" vim-lastplace
-"lua require'nvim-lastplace'.setup{}
-"let g:lastplace_ignore_buftype = "quickfix,nofile,help"
-"let g:lastplace_ignore_filetype = "gitcommit,gitrebase,svn,hgcommit"
-"let g:lastplace_open_folds = 1
 
 " notes
 source ~/.config/nvim/notes.vim
@@ -103,27 +97,23 @@ set conceallevel=2
 let g:vim_markdown_new_list_item_indent = 2
 let g:vim_markdown_folding_disabled = 1
 
-" barbar
-nnoremap <silent> <leader>1 :BufferGoto 1<CR>
-nnoremap <silent> <leader>2 :BufferGoto 2<CR>
-nnoremap <silent> <leader>3 :BufferGoto 3<CR>
-nnoremap <silent> <leader>4 :BufferGoto 4<CR>
-nnoremap <silent> <leader>5 :BufferGoto 5<CR>
-nnoremap <silent> <leader>6 :BufferGoto 6<CR>
-nnoremap <silent> <leader>7 :BufferGoto 7<CR>
-nnoremap <silent> <leader>8 :BufferGoto 8<CR>
-nnoremap <silent> <leader>9 :BufferLast<CR>
-let bufferline = get(g:, 'bufferline', {})
-let bufferline.animation = v:false
-let bufferline.icon_close_tab = ''
-let bufferline.icon_close_tab_modified = '+'
-let bufferline.icon_pinned = '車'
-let bufferline.insert_at_end = v:true
-let bufferline.exclude_name = ['']
-"let bufferline.no_name_title = '[no]'
-let bufferline.maximum_padding = 3
-map <silent> <leader>bo :BufferOrderByBufferNumber<CR>
-autocmd VimEnter * :lua require('bufferline.state').set_offset(28, 'FileTree')
+" bufferline
+source ~/.config/nvim/bufferline.lua
+nnoremap <silent> gb :BufferLinePick<CR>
+nnoremap <silent> gD :BufferLinePickClose<CR>
+nnoremap <silent><leader>bt :BufferLineSortByTabs<CR>
+nnoremap <silent><leader>1 <Cmd>BufferLineGoToBuffer 1<CR>
+nnoremap <silent><leader>2 <Cmd>BufferLineGoToBuffer 2<CR>
+nnoremap <silent><leader>3 <Cmd>BufferLineGoToBuffer 3<CR>
+nnoremap <silent><leader>4 <Cmd>BufferLineGoToBuffer 4<CR>
+nnoremap <silent><leader>5 <Cmd>BufferLineGoToBuffer 5<CR>
+nnoremap <silent><leader>6 <Cmd>BufferLineGoToBuffer 6<CR>
+nnoremap <silent><leader>7 <Cmd>BufferLineGoToBuffer 7<CR>
+nnoremap <silent><leader>8 <Cmd>BufferLineGoToBuffer 8<CR>
+nnoremap <silent><leader>9 <Cmd>BufferLineGoToBuffer 9<CR>
+" highlights
+hi BufferLineBufferSelected gui=bold
+hi BufferLineTabSelected guifg=normal_fg
 
 " bullets
 let g:bullets_enabled_file_types = [ 'markdown' ]
@@ -138,4 +128,3 @@ let g:bullets_set_mappings = 1
 "nmap <silent> o :InsertNewBullet <CR>
 "vnoremap gN :RenumberSelection<cr>
 "nnoremap gN :RenumberList<cr>
-

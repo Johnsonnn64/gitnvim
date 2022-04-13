@@ -10,11 +10,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'lukas-reineke/indent-blankline.nvim'
   "Plug 'ethanholz/nvim-lastplace'
   Plug 'preservim/nerdcommenter'
-  "Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'godlygeek/tabular'
   Plug 'preservim/vim-markdown'
-  Plug 'romgrk/barbar.nvim'
+  Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
+  "Plug 'romgrk/barbar.nvim'
   Plug 'dkarter/bullets.vim'
 
 call plug#end()
