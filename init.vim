@@ -5,8 +5,8 @@
 "/_/ /_/\___/\____/|___/_/_/ /_/ /_/
 "
 
+source ~/.config/nvim/lua/user/plugins.lua
 " settings
-source $HOME/.config/nvim/plugins.vim
 let mapleader=" "
 set noshowmode
 set hidden
@@ -59,14 +59,14 @@ vnoremap <silent> <C-j> :m '>+1<CR>gv=gv
 vnoremap <silent> <C-k> :m '<-2<CR>gv=gv
 imap kj <Esc>
 " edit config
-map <silent> <leader>np :tabnew ~/.config/nvim/plugins.vim <CR>
+map <silent> <leader>np :tabnew ~/.config/nvim/lua/user/plugins.lua<CR>
 map <silent> <leader>nc :tabnew ~/.config/nvim/init.vim <CR>
 
 " catppuccin
 colorscheme catppuccin
 
 " lualine
-source ~/.config/nvim/llineconf.lua
+source ~/.config/nvim/lua/user/lualine.lua
 
 "undotree
 map <leader>u :UndotreeToggle<CR>
@@ -81,18 +81,18 @@ if !exists('g:undotree_SetFocusWhenToggle')
 endif
 
 " nvim tree
-source ~/.config/nvim/ntree.vim
+source ~/.config/nvim/lua/user/nvimtree.vim
 
 " notes
-source ~/.config/nvim/notes.vim
+source ~/.config/nvim/lua/user/notes.vim
 
 " indent
-let g:indent_blankline_filetype_exclude= ["terminal", "vimwiki", "lspinfo", "packer", "checkhealth", "help","startify", "markdown", "",]
+let g:indent_blankline_filetype_exclude= ["terminal", "vimwiki", "lspinfo", "packer", "checkhealth", "help", "markdown", "",]
 map <leader>il :IndentBlanklineToggle<CR>
 hi IndentBlanklineChar guifg=#D9E0EE
 
 " coc
-source ~/.config/nvim/cocconf.vim
+source ~/.config/nvim/lua/user/coc.vim
 
 " vim_markdown
 set conceallevel=2
@@ -100,7 +100,7 @@ let g:vim_markdown_new_list_item_indent = 2
 let g:vim_markdown_folding_disabled = 1
 
 " bufferline
-source ~/.config/nvim/bufferline.lua
+source ~/.config/nvim/lua/user/bufferline.lua
 nnoremap <silent> gb :BufferLinePick<CR>
 nnoremap <silent> gD :BufferLinePickClose<CR>
 nnoremap <silent><leader>bt :BufferLineSortByTabs<CR>
@@ -115,7 +115,7 @@ nnoremap <silent><leader>8 <Cmd>BufferLineGoToBuffer 8<CR>
 nnoremap <silent><leader>9 <Cmd>BufferLineGoToBuffer 9<CR>
 " highlights
 hi BufferLineBufferSelected gui=bold
-hi BufferLineTabSelected guifg=normal_fg
+hi BufferLineTabSelected guibg=NONE guifg=normal_fg
 
 " bullets
 let g:bullets_enabled_file_types = [ 'markdown' ]
@@ -132,10 +132,9 @@ let g:bullets_set_mappings = 1
 "nnoremap gN :RenumberList<cr>
 
 " alpha
-source ~/.config/nvim/alpha.lua
 
 " telescope
-source ~/.config/nvim/tele.lua
+source ~/.config/nvim/lua/user/telescope.lua
 nnoremap <leader>ff <cmd>Telescope find_files hidden=true<cr>
 nnoremap <leader>f/ <cmd>Telescope find_files hidden=true cwd=~<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>

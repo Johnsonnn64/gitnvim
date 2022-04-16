@@ -4,7 +4,7 @@ require"bufferline".setup{
     tab_size = 14,
     show_close_icon = false,
     show_buffer_close_icons = false,
-    separator_style = "thick",
+    separator_style = "thin",
     offsets = {
       {
         filetype = "NvimTree",
