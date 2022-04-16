@@ -9,6 +9,7 @@
 source $HOME/.config/nvim/plugins.vim
 let mapleader=" "
 set noshowmode
+set hidden
 set encoding=utf-8
 set showmatch
 set termguicolors
@@ -76,7 +77,7 @@ if !exists('g:undotree_WindowLayout')
   let g:undotree_WindowLayout = 4
 endif
 if !exists('g:undotree_SetFocusWhenToggle')
-    let g:undotree_SetFocusWhenToggle = 1
+  let g:undotree_SetFocusWhenToggle = 1
 endif
 
 " nvim tree
@@ -88,6 +89,7 @@ source ~/.config/nvim/notes.vim
 " indent
 let g:indent_blankline_filetype_exclude= ["terminal", "vimwiki", "lspinfo", "packer", "checkhealth", "help","startify", "markdown", "",]
 map <leader>il :IndentBlanklineToggle<CR>
+hi IndentBlanklineChar guifg=#D9E0EE
 
 " coc
 source ~/.config/nvim/cocconf.vim
@@ -128,3 +130,14 @@ let g:bullets_set_mappings = 1
 "nmap <silent> o :InsertNewBullet <CR>
 "vnoremap gN :RenumberSelection<cr>
 "nnoremap gN :RenumberList<cr>
+
+" alpha
+source ~/.config/nvim/alpha.lua
+
+" telescope
+source ~/.config/nvim/tele.lua
+nnoremap <leader>ff <cmd>Telescope find_files hidden=true<cr>
+nnoremap <leader>f/ <cmd>Telescope find_files hidden=true cwd=~<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>fr <cmd>Telescope frecency<cr>

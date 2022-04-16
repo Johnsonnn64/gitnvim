@@ -23,7 +23,6 @@ require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
       custom_only = false,
       list = {
         { key = {"l"}, action = "edit" },
-        { key = "<C-s>", action = "split" },
       },
     },
   },
@@ -36,7 +35,7 @@ require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
     update_cwd = false,
     ignore_list = {},
   },
-  ignore_ft_on_setup = {},
+  ignore_ft_on_setup = {'alpha'},
   system_open = {
     cmd = nil,
     args = {},

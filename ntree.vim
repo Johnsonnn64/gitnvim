@@ -42,7 +42,7 @@ autocmd BufEnter * silent if (winnr("$") == 1 && &filetype == "nvimtree") | q | 
 "autocmd BufEnter * silent if bufname('#') =~ 'Nvim_tree_\d\+' && bufname('%') !~ 'Nvim_tree_\d\+' && winnr('$') > 1 |
     "\ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 nnoremap <leader>r :NvimTreeRefresh<CR>
-nnoremap <leader>nf :NvimTreeFindFile<CR>
-nnoremap <leader>f :NvimTreeToggle<CR>
+nnoremap <leader>n/ :NvimTreeFindFile<CR>
+nnoremap <leader>/ :NvimTreeToggle<CR>
 
 source ~/.config/nvim/ntree.lua
