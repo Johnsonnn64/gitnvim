@@ -1,5 +1,9 @@
--- lualine config
-require('lualine').setup {
+local status_ok, lualine = pcall(require, 'lualine')
+if not status_ok then
+  return
+end
+
+lualine.setup {
   options = {
     theme = "catppuccin",
     icons_enabled = true,
@@ -29,6 +33,4 @@ require('lualine').setup {
     lualine_y = {},
     lualine_z = { 'location' },
   },
-
-  tabline = { },
 }
