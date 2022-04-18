@@ -1,25 +1,25 @@
 local colorscheme = 'catppuccin'
 
-local status_ok, _ = pcall(vim.cmd, 'colorscheme ' .. colorscheme)
-if not status_ok then
-  vim.notify('colorscheme ' .. colorscheme .. ' not found!')
-  return
-end
-
 -- catppuccin config
 require('catppuccin').setup({
   transparent_background = true,
   styles = {
-    comments = "NONE",
-    functions = "NONE",
-    keywords = "NONE",
+    comments = "italic",
+    functions = "italic",
+    keywords = "italic",
     strings = "NONE",
-    variables = "NONE",
+    variables = "italic",
   },
   integrations = {
     treesitter = true,
     native_lsp = {
       enabled = true,
+      virtual_text = {
+        errors = "italic",
+        hints = "italic",
+        warnings = "italic",
+        information = "italic",
+      },
       underlines = {
         errors = "underline",
         hints = "underline",
@@ -36,30 +36,35 @@ require('catppuccin').setup({
     nvimtree = {
       enabled = true,
       show_root = false,
-      transparent_panel = false,
+      transparent_panel = true,
     },
     neotree = {
-      enabled = true,
+      enabled = false,
       show_root = false,
-      transparent_panel = true,
+      transparent_panel = false,
     },
     which_key = false,
     indent_blankline = {
       enabled = true,
-      colored_indent_levels = false,
+      colored_indent_levels = true,
     },
     dashboard = true,
     neogit = false,
     vim_sneak = false,
     fern = false,
     barbar = false,
-    bufferline = true,
+    bufferline = false,
     markdown = true,
     lightspeed = false,
     ts_rainbow = false,
     hop = false,
-    notify = true,
+    notify = false,
     telekasten = false,
     symbols_outline = true,
   }
 })
+
+local status_ok, _ = pcall(vim.cmd, 'colorscheme ' .. colorscheme)
+if not status_ok then
+  return
+end

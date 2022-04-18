@@ -69,6 +69,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["Comment.nvim"] = {
+    loaded = true,
+    path = "/home/john/.local/share/nvim/site/pack/packer/start/Comment.nvim",
+    url = "https://github.com/numToStr/Comment.nvim"
+  },
   LuaSnip = {
     loaded = true,
     path = "/home/john/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -79,11 +84,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/john/.local/share/nvim/site/pack/packer/start/alpha-nvim",
     url = "https://github.com/goolord/alpha-nvim"
-  },
-  ["auto-pairs"] = {
-    loaded = true,
-    path = "/home/john/.local/share/nvim/site/pack/packer/start/auto-pairs",
-    url = "https://github.com/jiangmiao/auto-pairs"
   },
   ["bufferline.nvim"] = {
     loaded = true,
@@ -137,6 +137,11 @@ _G.packer_plugins = {
     path = "/home/john/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["impatient.nvim"] = {
+    loaded = true,
+    path = "/home/john/.local/share/nvim/site/pack/packer/start/impatient.nvim",
+    url = "https://github.com/lewis6991/impatient.nvim"
+  },
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/home/john/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
@@ -146,11 +151,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/john/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
-  },
-  nerdcommenter = {
-    loaded = true,
-    path = "/home/john/.local/share/nvim/site/pack/packer/start/nerdcommenter",
-    url = "https://github.com/preservim/nerdcommenter"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -176,6 +176,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/john/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-ts-context-commentstring"] = {
+    loaded = true,
+    path = "/home/john/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring",
+    url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -235,7 +240,7 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType markdown ++once lua require("packer.load")({'vim-markdown', 'bullets.vim'}, { ft = "markdown" }, _G.packer_plugins)]]
+vim.cmd [[au FileType markdown ++once lua require("packer.load")({'bullets.vim', 'vim-markdown'}, { ft = "markdown" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")
 vim.cmd [[augroup filetypedetect]]

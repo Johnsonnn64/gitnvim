@@ -35,8 +35,6 @@ return require('packer').startup(function()
         require'alpha'.setup(require'alpha.themes.dashboard'.config) -- start screen
     end
   }
-  use { 'kyazdani42/nvim-tree.lua' } -- file tree
-  use 'jiangmiao/auto-pairs' -- pairs
   use {
     "catppuccin/nvim", -- color scheme
     as = "catppuccin",
@@ -45,10 +43,13 @@ return require('packer').startup(function()
     'nvim-lualine/lualine.nvim', -- status line
     requires = { 'kyazdani42/nvim-web-devicons', opt = true } -- file icon
   }
+  use 'lukas-reineke/indent-blankline.nvim' -- lines in tab
+  use 'lewis6991/impatient.nvim'
+  use 'kyazdani42/nvim-tree.lua' -- file tree
   use { 'akinsho/bufferline.nvim', tag = "*" } -- buffers
   use 'mbbill/undotree' -- undo tree
-  use 'lukas-reineke/indent-blankline.nvim' -- lines in tab
-  use 'preservim/nerdcommenter' -- commenter
+  use 'numToStr/Comment.nvim' -- commenter
+  use 'lewis6991/gitsigns.nvim' -- git signs
 
   -- markdown
   use { 'preservim/vim-markdown', opt = true, ft = { 'markdown'} }
@@ -87,6 +88,5 @@ return require('packer').startup(function()
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
   }
-
-  use 'lewis6991/gitsigns.nvim'
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
 end)
