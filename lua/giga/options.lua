@@ -33,9 +33,7 @@ local options = {
   relativenumber = true,                   -- set relative numbered lines
   numberwidth = 4,                         -- set number column width to 2 {default 4}
   signcolumn = 'yes',                      -- always show the sign column, otherwise it would shift the text each time
-  wrap = false,                            -- display lines as one long line
   scrolloff = 4,                           -- is one of my fav
-  sidescrolloff = 4,
   hidden = true,                           -- for some plugin
   guifont = 'monospace:h17',               -- the font used in graphical neovim applications
 }
@@ -51,4 +49,6 @@ vim.cmd [[
   autocmd BufRead,BufNewFile ~/personal/school/* set filetype=markdown
   autocmd BufRead,BufNewFile ~/.local/share/calcurse/notes/* set filetype=markdown
   autocmd BufWritePre * %s/\s\+$//e
+  let g:vim_markdown_new_list_itme_indent = 2
+  let g:vim_markdown_folding_disabled = 1
 ]]
