@@ -32,7 +32,7 @@ return require('packer').startup(function()
   use {
     'goolord/alpha-nvim',
     config = function ()
-        require'alpha'.setup(require'alpha.themes.dashboard'.config) -- start screen
+      require'alpha'.setup(require'alpha.themes.dashboard'.config) -- start screen
     end
   }
   use {

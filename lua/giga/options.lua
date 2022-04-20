@@ -36,6 +36,7 @@ local options = {
   scrolloff = 4,                           -- is one of my fav
   hidden = true,                           -- for some plugin
   guifont = 'monospace:h17',               -- the font used in graphical neovim applications
+  linebreak = true                         -- break words at the end of line
 }
 
 for k, v in pairs(options) do

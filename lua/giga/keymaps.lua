@@ -67,3 +67,13 @@ keymap('n', '<leader>gp', ":Gitsigns preview_hunk<CR>", opts)
 keymap('n', '<leader>gj', ":Gitsigns next_hunk<CR>", opts)
 keymap('n', '<leader>gk', ":Gitsigns prev_hunk<CR>", opts)
 keymap('n', '<leader>gr', ":Gitsigns reset_hunk<CR>", opts)
+
+-- linebreaks
+keymap('n', 'j', 'gj', opts)
+keymap('n', 'k', 'gk', opts)
+keymap('n', '0', 'g0', opts)
+keymap('n', '^', 'g^', opts)
+keymap('n', '$', 'g$', opts)
+
+keymap('v', 'j', 'gj', opts)
+keymap('v', 'k', 'gk', opts)
