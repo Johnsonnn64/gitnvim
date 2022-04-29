@@ -25,11 +25,6 @@ keymap('v', '<C-k>', ":m '>+1<CR>gv=gv", opts)
 keymap('x', '<C-j>', ":m '>+1<CR>gv-gv", opts)
 keymap('x', '<C-k>', ":m '<-2<CR>gv-gv", opts)
 
--- keymaps for configs
--- TODO: may be replaced with fzf
--- keymap('n', '<leader>nc' ':tabnew ~/.config/nvim/init.lua<CR>')
--- keymap('n', '<leader>np' ':tabnew ~/.config/nvim/lua/giga/plugins.lua<CR>')
-
 -- spellcheck
 keymap('n', '<leader><leader>', ':setlocal spell! spelllang=en_us<CR>', opts)
 
@@ -69,11 +64,11 @@ keymap('n', '<leader>gk', ":Gitsigns prev_hunk<CR>", opts)
 keymap('n', '<leader>gr', ":Gitsigns reset_hunk<CR>", opts)
 
 -- linebreaks
-keymap('n', 'j', 'gj', opts)
-keymap('n', 'k', 'gk', opts)
-keymap('n', '0', 'g0', opts)
-keymap('n', '^', 'g^', opts)
-keymap('n', '$', 'g$', opts)
-
-keymap('v', 'j', 'gj', opts)
-keymap('v', 'k', 'gk', opts)
+-- keymap('n', 'j', 'gj', opts)
+-- keymap('n', 'k', 'gk', opts)
+-- keymap('n', '0', 'g0', opts)
+-- keymap('n', '^', 'g^', opts)
+-- keymap('n', '$', 'g$', opts)
+--
+-- keymap('v', 'j', 'gj', opts)
+-- keymap('v', 'k', 'gk', opts)

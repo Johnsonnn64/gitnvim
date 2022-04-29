@@ -1,6 +1,8 @@
 -- :help options
 
 local options = {
+  lazyredraw = true,
+  syntax = 'off',
   backup = false,                          -- creates a backup file
   clipboard = 'unnamedplus',               -- allows neovim to access the system clipboard
   cmdheight = 2,                           -- more space in the neovim command line for displaying messages
@@ -33,7 +35,6 @@ local options = {
   relativenumber = true,                   -- set relative numbered lines
   numberwidth = 4,                         -- set number column width to 2 {default 4}
   signcolumn = 'yes',                      -- always show the sign column, otherwise it would shift the text each time
-  scrolloff = 4,                           -- is one of my fav
   hidden = true,                           -- for some plugin
   guifont = 'monospace:h17',               -- the font used in graphical neovim applications
   linebreak = true                         -- break words at the end of line
@@ -45,11 +46,11 @@ end
 
 vim.opt.shortmess:append 'c'
 vim.cmd 'set whichwrap+=<,>,[,],h,l'
+-- autocmd BufWritePre * %s/\s\+$//e
 
 vim.cmd [[
   autocmd BufRead,BufNewFile ~/personal/school/* set filetype=markdown
   autocmd BufRead,BufNewFile ~/.local/share/calcurse/notes/* set filetype=markdown
-  autocmd BufWritePre * %s/\s\+$//e
   let g:vim_markdown_new_list_itme_indent = 2
   let g:vim_markdown_folding_disabled = 1
 ]]

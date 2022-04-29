@@ -88,5 +88,4 @@ return require('packer').startup(function()
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
   }
-  use 'JoosepAlviste/nvim-ts-context-commentstring'
 end)
