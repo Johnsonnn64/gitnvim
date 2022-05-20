@@ -42,9 +42,6 @@ keymap('n', '<leader>r', ':NvimTreeRefresh<CR>', opts)
 -- bufferline
 keymap('n', '<leader>d', ':BufferLinePickClose<CR>', opts)
 keymap('n', '<leader>bt', ':BufferLineSortByTabs<CR>', opts)
--- just use numbers
---keymap('n', 'tt', ':bnext<CR>', opts)
---keymap('n', 'tT', ':bprev<CR>', opts)
 keymap('n', '<leader>1', ':BufferLineGoToBuffer 1<CR>', opts)
 keymap('n', '<leader>2', ':BufferLineGoToBuffer 2<CR>', opts)
 keymap('n', '<leader>3', ':BufferLineGoToBuffer 3<CR>', opts)
@@ -63,12 +60,11 @@ keymap('n', '<leader>gj', ":Gitsigns next_hunk<CR>", opts)
 keymap('n', '<leader>gk', ":Gitsigns prev_hunk<CR>", opts)
 keymap('n', '<leader>gr', ":Gitsigns reset_hunk<CR>", opts)
 
--- linebreaks
--- keymap('n', 'j', 'gj', opts)
--- keymap('n', 'k', 'gk', opts)
--- keymap('n', '0', 'g0', opts)
--- keymap('n', '^', 'g^', opts)
--- keymap('n', '$', 'g$', opts)
---
--- keymap('v', 'j', 'gj', opts)
--- keymap('v', 'k', 'gk', opts)
+--splits
+keymap('n', '<leader>sv', ":vs<CR>", opts)
+keymap('n', '<leader>ss', ":sp<CR>", opts)
+
+-- notes
+keymap('n', '<leader>wa', ":e ~/.cache/notes/anime.md<CR>", opts)
+keymap('n', '<leader>ww', ":e ~/.cache/notes/index.md<CR>", opts)
+keymap('n', '<leader>we', ":e ~/.cache/notes/etc.md<CR>", opts)

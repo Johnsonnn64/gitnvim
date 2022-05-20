@@ -2,7 +2,7 @@ local colorscheme = 'catppuccin'
 
 -- catppuccin config
 require('catppuccin').setup({
-  transparent_background = true,
+  transparent_background = false,
   styles = {
     comments = "italic",
     functions = "italic",
@@ -36,7 +36,7 @@ require('catppuccin').setup({
     nvimtree = {
       enabled = true,
       show_root = false,
-      transparent_panel = true,
+      transparent_panel = false,
     },
     neotree = {
       enabled = false,

@@ -18,7 +18,7 @@ lualine.setup {
     },
     lualine_b = { 'filename' },
     lualine_c = { 'branch', 'diff' },
-    lualine_x = { 'fileformat', 'filetype' },
+    lualine_x = { 'filetype', 'fileformat' },
     lualine_y = { 'progress' },
     lualine_z = {
       { 'location', separator = { left = '', right = '' } },

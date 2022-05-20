@@ -2,12 +2,11 @@
 
 local options = {
   lazyredraw = true,
-  syntax = 'off',
   backup = false,                          -- creates a backup file
   clipboard = 'unnamedplus',               -- allows neovim to access the system clipboard
-  cmdheight = 2,                           -- more space in the neovim command line for displaying messages
+  cmdheight = 1,                           -- more space in the neovim command line for displaying messages
   completeopt = { 'menuone', 'noselect' }, -- mostly just for cmp
-  conceallevel = 0,                        -- so that `` is visible in markdown files
+  conceallevel = 1,                        -- so that `` is visible in markdown files
   fileencoding = 'utf-8',                  -- the encoding written to a file
   hlsearch = true,                         -- highlight all matches on previous search pattern
   ignorecase = true,                       -- ignore case in search patterns
@@ -22,7 +21,7 @@ local options = {
   splitright = true,                       -- force all vertical splits to go to the right of current window
   swapfile = false,                        -- creates a swapfile
   termguicolors = true,                    -- set term gui colors (most terminals support this)
-  timeoutlen = 1000,                       -- time to wait for a mapped sequence to complete (in milliseconds)
+  timeoutlen = 500,                       -- time to wait for a mapped sequence to complete (in milliseconds)
   undofile = true,                         -- enable persistent undo
   updatetime = 300,                        -- faster completion (4000ms default)
   writebackup = false,                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
@@ -45,7 +44,6 @@ for k, v in pairs(options) do
 end
 
 vim.opt.shortmess:append 'c'
-vim.cmd 'set whichwrap+=<,>,[,],h,l'
 -- autocmd BufWritePre * %s/\s\+$//e
 
 vim.cmd [[
@@ -53,4 +51,8 @@ vim.cmd [[
   autocmd BufRead,BufNewFile ~/.local/share/calcurse/notes/* set filetype=markdown
   let g:vim_markdown_new_list_itme_indent = 2
   let g:vim_markdown_folding_disabled = 1
+  set whichwrap+=<,>,[,],h,l
+  autocmd FileType markdown syntax off 
+  autocmd FileType markdown set nocursorline
+  autocmd BufEnter * set formatoptions-=cro
 ]]
