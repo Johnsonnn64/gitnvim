@@ -16,7 +16,7 @@ telescope.setup {
       "--hidden"
     },
     path_display = { "truncate = 2" },
-    file_ignore_patterns = {"^.git", "^.pki", "%.jpg", "%.jpeg", "%.png", "%.gif", "%.otf", "%.ttf"},
+    file_ignore_patterns = {"%.git", "%.pki", "%.jpg", "%.jpeg", "%.png", "%.gif", "%.otf", "%.ttf"},
     preview = {
       timeout = 200,
       filesize_limit = 3

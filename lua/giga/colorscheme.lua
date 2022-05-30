@@ -1,8 +1,10 @@
+vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 local colorscheme = 'catppuccin'
 
 -- catppuccin config
 require('catppuccin').setup({
   transparent_background = false,
+  term_colors = false,
   styles = {
     comments = "italic",
     functions = "italic",

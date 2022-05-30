@@ -68,3 +68,10 @@ keymap('n', '<leader>ss', ":sp<CR>", opts)
 keymap('n', '<leader>wa', ":e ~/.cache/notes/anime.md<CR>", opts)
 keymap('n', '<leader>ww', ":e ~/.cache/notes/index.md<CR>", opts)
 keymap('n', '<leader>we', ":e ~/.cache/notes/etc.md<CR>", opts)
+
+-- goyo
+keymap('n', '<leader>gg', ":Goyo<CR>", opts)
+
+-- lsp
+keymap('n', 'gr', ":Telescope lsp_references theme=ivy initial_mode=normal layout_config={height=0.25}<CR>", opts)
+

@@ -6,7 +6,7 @@ local options = {
   clipboard = 'unnamedplus',               -- allows neovim to access the system clipboard
   cmdheight = 1,                           -- more space in the neovim command line for displaying messages
   completeopt = { 'menuone', 'noselect' }, -- mostly just for cmp
-  conceallevel = 1,                        -- so that `` is visible in markdown files
+  conceallevel = 2,                        -- so that `` is visible in markdown files
   fileencoding = 'utf-8',                  -- the encoding written to a file
   hlsearch = true,                         -- highlight all matches on previous search pattern
   ignorecase = true,                       -- ignore case in search patterns
@@ -21,7 +21,7 @@ local options = {
   splitright = true,                       -- force all vertical splits to go to the right of current window
   swapfile = false,                        -- creates a swapfile
   termguicolors = true,                    -- set term gui colors (most terminals support this)
-  timeoutlen = 500,                       -- time to wait for a mapped sequence to complete (in milliseconds)
+  timeoutlen = 500,                        -- time to wait for a mapped sequence to complete (in milliseconds)
   undofile = true,                         -- enable persistent undo
   updatetime = 300,                        -- faster completion (4000ms default)
   writebackup = false,                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
@@ -46,13 +46,43 @@ end
 vim.opt.shortmess:append 'c'
 -- autocmd BufWritePre * %s/\s\+$//e
 
+
 vim.cmd [[
-  autocmd BufRead,BufNewFile ~/personal/school/* set filetype=markdown
-  autocmd BufRead,BufNewFile ~/.local/share/calcurse/notes/* set filetype=markdown
-  let g:vim_markdown_new_list_itme_indent = 2
+  " pencil
+  let g:pencil#textwidth = 80
+  let g:pencil#cursorwrap = 0
+  " vim-markdown
+  function s:TocToggle()
+    if index(["markdown", "qf"], &filetype) == -1
+      return
+    endif
+    if get(getloclist(0, {'winid':0}), 'winid', 0)
+      lclose
+    else
+      Toc
+    endif
+  endfunction
+  command TocToggle call s:TocToggle()
   let g:vim_markdown_folding_disabled = 1
-  set whichwrap+=<,>,[,],h,l
-  autocmd FileType markdown syntax off 
-  autocmd FileType markdown set nocursorline
+  let g:vim_markdown_toc_autofit = 1
+  let g:vim_markdown_follow_anchor = 1
+  autocmd BufRead,BufNewFile ~/personal/school/* set filetype=markdown
+  set whichwrap+=<,>,[,]
+  autocmd FileType markdown setlocal nocursorline
   autocmd BufEnter * set formatoptions-=cro
+  let g:goyo_width = 82
+  function! s:goyo_enter()
+    set noshowcmd scrolloff=999 concealcursor=nc
+    lua vim.diagnostic.disable()
+  endfunction
+  function! s:goyo_exit()
+    set showcmd scrolloff=0 concealcursor-=nc
+    if (&ft=='markdown')
+      LspStart grammarly
+    endif
+    lua vim.diagnostic.enable()
+  endfunction
+  autocmd! User GoyoEnter nested call <SID>goyo_enter()
+  autocmd! User GoyoLeave nested call <SID>goyo_exit()
 ]]
+
