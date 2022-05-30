@@ -29,12 +29,12 @@ require('packer').init {
 
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
-  use {
-    'goolord/alpha-nvim',
-    config = function ()
-      require'alpha'.setup(require'alpha.themes.dashboard'.config) -- start screen
-    end
-  }
+  -- use {
+  --   'goolord/alpha-nvim',
+  --   config = function ()
+  --     require'alpha'.setup(require'alpha.themes.dashboard'.config) -- start screen
+  --   end
+  -- }
   use {
     "catppuccin/nvim", -- color scheme
     as = "catppuccin",
@@ -44,7 +44,10 @@ return require('packer').startup(function()
     requires = { 'kyazdani42/nvim-web-devicons', opt = true } -- file icon
   }
   use 'lukas-reineke/indent-blankline.nvim' -- lines in tab
+  use { 'preservim/vim-pencil', opt = true, ft = { 'markdown' } }
   use 'lewis6991/impatient.nvim'
+  use 'dstein64/vim-startuptime'
+  use 'junegunn/goyo.vim'
   use 'kyazdani42/nvim-tree.lua' -- file tree
   use { 'akinsho/bufferline.nvim', tag = "*" } -- buffers
   use 'mbbill/undotree' -- undo tree
