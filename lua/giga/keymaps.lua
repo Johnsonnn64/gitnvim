@@ -8,10 +8,10 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- switch through windows
-keymap('n', '<leader>h', '<C-w>h', opts)
-keymap('n', '<leader>j', '<C-w>j', opts)
-keymap('n', '<leader>k', '<C-w>k', opts)
-keymap('n', '<leader>l', '<C-w>l', opts)
+keymap('n', '<c-h>', '<C-w>h', opts)
+keymap('n', '<c-j>', '<C-w>j', opts)
+keymap('n', '<c-k>', '<C-w>k', opts)
+keymap('n', '<c-l>', '<C-w>l', opts)
 
 -- resize
 keymap('n', '<Up>', ':resize +2<CR>', opts)
