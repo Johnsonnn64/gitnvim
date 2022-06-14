@@ -37,6 +37,7 @@ local options = {
   hidden = true,                           -- for some plugin
   guifont = 'monospace:h17',               -- the font used in graphical neovim applications
   linebreak = true                         -- break words at the end of line
+  foldenable = false,
 }
 
 for k, v in pairs(options) do
@@ -69,6 +70,7 @@ vim.cmd [[
   autocmd BufRead,BufNewFile ~/personal/school/* set filetype=markdown
   set whichwrap+=<,>,[,]
   autocmd FileType markdown setlocal nocursorline
+  autocmd FileType org set nonumber norelativenumber concealcursor=nc
   autocmd BufEnter * set formatoptions-=cro
   let g:goyo_width = 82
   function! s:goyo_enter()

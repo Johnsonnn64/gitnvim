@@ -64,11 +64,6 @@ keymap('n', '<leader>gr', ":Gitsigns reset_hunk<CR>", opts)
 keymap('n', '<leader>sv', ":vs<CR>", opts)
 keymap('n', '<leader>ss', ":sp<CR>", opts)
 
--- notes
-keymap('n', '<leader>wa', ":e ~/.cache/notes/anime.md<CR>", opts)
-keymap('n', '<leader>ww', ":e ~/.cache/notes/index.md<CR>", opts)
-keymap('n', '<leader>we', ":e ~/.cache/notes/etc.md<CR>", opts)
-
 -- goyo
 keymap('n', '<leader>gg', ":Goyo<CR>", opts)
 

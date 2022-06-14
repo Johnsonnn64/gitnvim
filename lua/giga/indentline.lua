@@ -13,6 +13,7 @@ vim.g.indent_blankline_filetype_exclude = {
  	"NvimTree",
  	"Trouble",
   "markdown",
+  "org",
 }
 vim.g.indentLine_enabled = 1
 vim.g.indent_blankline_char = "│"

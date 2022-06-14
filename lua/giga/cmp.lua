@@ -97,6 +97,7 @@ cmp.setup {
       vim_item.menu = ({
         nvim_lsp = "[LSP]",
         nvim_lua = "[LUA]",
+        orgmode = "[Org]",
         luasnip = "[Snip]",
         buffer = "[Buf]",
         path = "[Path]",
@@ -107,6 +108,7 @@ cmp.setup {
   sources = {
     { name = 'nvim_lua' },
     { name = 'nvim_lsp' },
+    { name = 'orgmode' },
     { name = "luasnip" },
     { name = "path" },
     { name = "buffer" },

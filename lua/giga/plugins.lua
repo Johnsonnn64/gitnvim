@@ -93,4 +93,8 @@ return require('packer').startup(function()
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
   }
+  -- org mode
+  use 'nvim-orgmode/orgmode'
+  use 'akinsho/org-bullets.nvim'
+
 end)
