@@ -53,6 +53,7 @@ return require('packer').startup(function()
   use 'mbbill/undotree' -- undo tree
   use 'numToStr/Comment.nvim' -- commenter
   use 'lewis6991/gitsigns.nvim' -- git signs
+  use 'windwp/nvim-autopairs' -- auto pairs
 
   -- markdown
   use { 'preservim/vim-markdown', opt = true, ft = { 'markdown'} }
