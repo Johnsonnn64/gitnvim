@@ -89,10 +89,13 @@ return require('packer').startup(function()
     requires = {'tami5/sqlite.lua'}
   }
 
+  -- treesitter
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
   }
+  use 'nvim-treesitter/playground'
+
   -- org mode
   use 'nvim-orgmode/orgmode'
   use 'akinsho/org-bullets.nvim'
