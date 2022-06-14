@@ -33,4 +33,5 @@ lualine.setup {
     lualine_y = {},
     lualine_z = { 'location' },
   },
+  extensions = { 'nvim-tree', 'quickfix' }
 }

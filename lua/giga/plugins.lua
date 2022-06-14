@@ -44,9 +44,8 @@ return require('packer').startup(function()
     requires = { 'kyazdani42/nvim-web-devicons', opt = true } -- file icon
   }
   use 'lukas-reineke/indent-blankline.nvim' -- lines in tab
-  use { 'preservim/vim-pencil', opt = true, ft = { 'markdown' } }
   use 'lewis6991/impatient.nvim'
-  use 'dstein64/vim-startuptime'
+  -- use 'dstein64/vim-startuptime'
   use 'junegunn/goyo.vim'
   use 'kyazdani42/nvim-tree.lua' -- file tree
   use { 'akinsho/bufferline.nvim', tag = "*" } -- buffers
@@ -59,6 +58,7 @@ return require('packer').startup(function()
   -- markdown
   use { 'preservim/vim-markdown', opt = true, ft = { 'markdown'} }
   use { 'dkarter/bullets.vim', opt = true, ft = { 'markdown' } }
+  use { 'preservim/vim-pencil', opt = true, ft = { 'markdown' } }
 
   -- cmp plugins
   use 'hrsh7th/nvim-cmp'

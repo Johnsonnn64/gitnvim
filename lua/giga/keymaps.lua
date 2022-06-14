@@ -37,7 +37,6 @@ keymap('n', '<leader>fr', ":Telescope frecency theme=dropdown previewer=false<CR
 -- nvimtree
 keymap('n', '<leader>/', ':NvimTreeToggle<CR>', opts)
 keymap('n', '<leader>n/', ':NvimTreeFindFile<CR>', opts)
-keymap('n', '<leader>r', ':NvimTreeRefresh<CR>', opts)
 
 -- bufferline
 keymap('n', '<leader>d', ':BufferLinePickClose<CR>', opts)

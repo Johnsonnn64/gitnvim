@@ -15,7 +15,7 @@ telescope.setup {
       "--smart-case",
       "--hidden"
     },
-    path_display = { "truncate = 2" },
+    path_display = { truncate = 2 },
     file_ignore_patterns = {"%.git", "%.pki", "%.jpg", "%.jpeg", "%.png", "%.gif", "%.otf", "%.ttf"},
     preview = {
       timeout = 200,

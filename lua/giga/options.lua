@@ -21,7 +21,7 @@ local options = {
   splitright = true,                       -- force all vertical splits to go to the right of current window
   swapfile = false,                        -- creates a swapfile
   termguicolors = true,                    -- set term gui colors (most terminals support this)
-  timeoutlen = 500,                        -- time to wait for a mapped sequence to complete (in milliseconds)
+  timeoutlen = 1000,                       -- time to wait for a mapped sequence to complete (in milliseconds)
   undofile = true,                         -- enable persistent undo
   updatetime = 300,                        -- faster completion (4000ms default)
   writebackup = false,                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
@@ -36,7 +36,7 @@ local options = {
   signcolumn = 'yes',                      -- always show the sign column, otherwise it would shift the text each time
   hidden = true,                           -- for some plugin
   guifont = 'monospace:h17',               -- the font used in graphical neovim applications
-  linebreak = true                         -- break words at the end of line
+  linebreak = true,                        -- break words at the end of line
   foldenable = false,
 }
 
