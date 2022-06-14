@@ -81,6 +81,7 @@ return require('packer').startup(function()
     'nvim-telescope/telescope.nvim', -- fzf
     requires = { {'nvim-lua/plenary.nvim'} }
   }
+  use 'nvim-telescope/telescope-ui-select.nvim'
   use {
     "nvim-telescope/telescope-frecency.nvim", -- recent fzf
     config = function()

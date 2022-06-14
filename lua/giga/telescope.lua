@@ -23,6 +23,11 @@ telescope.setup {
     },
   },
   extensions = {
+    ["ui-select"] = {
+      require("telescope.themes").get_cursor {
+        initial_mode = 'normal'
+      },
+    },
     frecency = {
       show_scores = false,
       show_unindexed = true,
@@ -34,3 +39,4 @@ telescope.setup {
     },
   },
 }
+require("telescope").load_extension("ui-select")
