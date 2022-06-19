@@ -1,7 +1,7 @@
-require 'giga.impatient'
 require 'giga.plugins'
 require 'giga.options'
 require 'giga.keymaps'
+require 'giga.impatient'
 require 'giga.colorscheme'
 require 'giga.nvimtree'
 require 'giga.cmp'

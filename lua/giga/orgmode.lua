@@ -9,5 +9,6 @@ require('orgmode').setup({
 
 -- bullet symbols
 require('org-bullets').setup {
-  symbols = { "◉", "○", "✸", "✿" }
+  -- symbols = { "◉", "○", "✸", "✿" }
+  concealcursor = true,
 }
