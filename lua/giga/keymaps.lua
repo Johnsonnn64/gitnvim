@@ -71,3 +71,6 @@ keymap('n', '<leader>gg', ":Goyo<CR>", opts)
 -- lsp
 keymap('n', 'gr', ":Telescope lsp_references theme=ivy initial_mode=normal layout_config={height=0.25}<CR>", opts)
 
+-- hop.nvim
+keymap('n', '<leader>cw', ":HopWordCurrentLine<CR>", opts)
+keymap('n', '<leader>h', ":HopLineStart<CR>", opts)

@@ -54,6 +54,9 @@ return require('packer').startup(function()
   use 'lewis6991/gitsigns.nvim' -- git signs
   use { 'akinsho/toggleterm.nvim', tag = 'v1.*' } -- toggleterm
   use 'windwp/nvim-autopairs' -- auto pairs
+  use { 'phaazon/hop.nvim', branch = 'v1', config = function ()
+    require'hop'.setup { keys = 'qweruiopasdfghjklcvnm'}
+  end}
 
   -- markdown
   use { 'preservim/vim-pencil', opt = true, ft = { 'markdown' } }
