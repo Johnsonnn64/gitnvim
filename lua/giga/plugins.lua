@@ -56,8 +56,6 @@ return require('packer').startup(function()
   use 'windwp/nvim-autopairs' -- auto pairs
 
   -- markdown
-  use { 'preservim/vim-markdown', opt = true, ft = { 'markdown'} }
-  use { 'dkarter/bullets.vim', opt = true, ft = { 'markdown' } }
   use { 'preservim/vim-pencil', opt = true, ft = { 'markdown' } }
 
   -- cmp plugins

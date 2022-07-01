@@ -68,22 +68,17 @@ vim.cmd [[
   let g:vim_markdown_folding_disabled = 1
   let g:vim_markdown_toc_autofit = 1
   let g:vim_markdown_follow_anchor = 1
-  autocmd BufRead,BufNewFile ~/personal/school/* set filetype=markdown
+  autocmd BufRead,BufNewFile ~/personal/studies/* set filetype=markdown
   set whichwrap+=<,>,[,]
   autocmd FileType markdown setlocal nocursorline
   autocmd FileType org set nonumber norelativenumber concealcursor=nc
   autocmd BufEnter * set formatoptions-=cro
-  let g:goyo_width = 82
+  let g:goyo_width = 84
   function! s:goyo_enter()
-    set noshowcmd scrolloff=999 concealcursor=nc
-    lua vim.diagnostic.disable()
+    set scrolloff=999 concealcursor=nc
   endfunction
   function! s:goyo_exit()
-    set showcmd scrolloff=0 concealcursor-=nc
-    if (&ft=='markdown')
-      LspStart grammarly
-    endif
-    lua vim.diagnostic.enable()
+    set scrolloff=0 concealcursor-=nc
   endfunction
   autocmd! User GoyoEnter nested call <SID>goyo_enter()
   autocmd! User GoyoLeave nested call <SID>goyo_exit()
