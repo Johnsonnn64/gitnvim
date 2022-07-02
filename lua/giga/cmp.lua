@@ -141,7 +141,13 @@ cmp.setup {
     }, {
       { name = 'cmdline' }
     })
-  })
+  }),
+  cmp.setup.cmdline('/', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+      { name = 'buffer' }
+    }
+  }),
 }
 require("cmp_dictionary").setup({
   dic = {
