@@ -50,24 +50,6 @@ vim.opt.shortmess:append 'c'
 
 
 vim.cmd [[
-  " pencil
-  let g:pencil#textwidth = 80
-  let g:pencil#cursorwrap = 0
-  " vim-markdown
-  function s:TocToggle()
-    if index(["markdown", "qf"], &filetype) == -1
-      return
-    endif
-    if get(getloclist(0, {'winid':0}), 'winid', 0)
-      lclose
-    else
-      Toc
-    endif
-  endfunction
-  command TocToggle call s:TocToggle()
-  let g:vim_markdown_folding_disabled = 1
-  let g:vim_markdown_toc_autofit = 1
-  let g:vim_markdown_follow_anchor = 1
   autocmd BufRead,BufNewFile ~/personal/studies/* set filetype=markdown
   set whichwrap+=<,>,[,]
   autocmd FileType markdown setlocal nocursorline

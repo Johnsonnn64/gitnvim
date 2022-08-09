@@ -58,9 +58,6 @@ return require('packer').startup(function()
     require'hop'.setup { keys = 'qweruiopasdfghjklcvnm'}
   end}
 
-  -- markdown
-  use { 'preservim/vim-pencil', opt = true, ft = { 'markdown' } }
-
   -- cmp plugins
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-buffer'
