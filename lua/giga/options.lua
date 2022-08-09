@@ -19,7 +19,7 @@ local options = {
   smartindent = true,                      -- make indenting smarter again
   splitbelow = true,                       -- force all horizontal splits to go below current window
   splitright = true,                       -- force all vertical splits to go to the right of current window
-  swapfile = false,                        -- creates a swapfile
+  swapfile = true,                        -- creates a swapfile
   termguicolors = true,                    -- set term gui colors (most terminals support this)
   timeoutlen = 1000,                       -- time to wait for a mapped sequence to complete (in milliseconds)
   undofile = true,                         -- enable persistent undo
@@ -45,7 +45,8 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
-vim.opt.shortmess:append 'c'
+vim.opt.shortmess:append 'cA'
+vim.opt.shortmess:remove 'T'
 -- autocmd BufWritePre * %s/\s\+$//e
 
 
@@ -55,7 +56,7 @@ vim.cmd [[
   autocmd FileType markdown setlocal nocursorline
   autocmd FileType org set nonumber norelativenumber concealcursor=nc
   autocmd BufEnter * set formatoptions-=cro
-  let g:goyo_width = 84
+  let g:goyo_width = 80
   function! s:goyo_enter()
     set scrolloff=999 concealcursor=nc
   endfunction
