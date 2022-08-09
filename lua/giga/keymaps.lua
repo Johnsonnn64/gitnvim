@@ -65,5 +65,5 @@ keymap('n', '<leader>gr', ":Gitsigns reset_hunk<CR>", opts)
 keymap('n', '<leader>gg', ":Goyo<CR>", opts)
 
 -- hop.nvim
-keymap('n', '<leader>cw', ":HopWordCurrentLine<CR>", opts)
-keymap('n', '<leader>h', ":HopLineStart<CR>", opts)
+keymap('', '<leader>w', ":HopWord<CR>", opts)
+keymap('', '<leader>h', ":HopLineStart<CR>", opts)
