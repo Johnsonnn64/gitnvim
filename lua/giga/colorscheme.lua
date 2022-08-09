@@ -1,72 +1,95 @@
 vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
-local colorscheme = 'catppuccin'
 
--- catppuccin config
-require('catppuccin').setup({
-  transparent_background = false,
-  term_colors = false,
-  styles = {
-    comments = "italic",
-    functions = "italic",
-    keywords = "italic",
-    strings = "NONE",
-    variables = "italic",
-  },
-  integrations = {
-    treesitter = true,
-    native_lsp = {
-      enabled = true,
-      virtual_text = {
-        errors = "italic",
-        hints = "italic",
-        warnings = "italic",
-        information = "italic",
-      },
-      underlines = {
-        errors = "underline",
-        hints = "underline",
-        warnings = "underline",
-        information = "underline",
-      },
-    },
-    lsp_trouble = false,
-    cmp = true,
-    lsp_saga = false,
-    gitgutter = false,
-    gitsigns = true,
-    telescope = true,
-    nvimtree = {
-      enabled = true,
-      show_root = false,
-      transparent_panel = false,
-    },
-    neotree = {
-      enabled = false,
-      show_root = false,
-      transparent_panel = false,
-    },
-    which_key = false,
-    indent_blankline = {
-      enabled = true,
-      colored_indent_levels = true,
-    },
-    dashboard = true,
-    neogit = false,
-    vim_sneak = false,
-    fern = false,
-    barbar = false,
-    bufferline = false,
-    markdown = true,
-    lightspeed = false,
-    ts_rainbow = false,
-    hop = false,
-    notify = false,
-    telekasten = false,
-    symbols_outline = true,
-  }
+require("catppuccin").setup({
+	dim_inactive = {
+		enabled = true,
+		shade = "dark",
+		percentage = 0.15,
+	},
+	transparent_background = false,
+	term_colors = false,
+	compile = {
+		enabled = true,
+		path = vim.fn.stdpath "cache" .. "/catppuccin",
+	},
+	styles = {
+		comments = { "italic" },
+		conditionals = { "italic" },
+		loops = {},
+		functions = { "italic" },
+		keywords = {},
+		strings = {},
+		variables = { "italic"},
+		numbers = {},
+		booleans = { "italic" },
+		properties = {},
+		types = {},
+		operators = {},
+	},
+	integrations = {
+		treesitter = true,
+		native_lsp = {
+			enabled = true,
+			virtual_text = {
+				errors = { "italic" },
+				hints = { "italic" },
+				warnings = { "italic" },
+				information = { "italic" },
+			},
+			underlines = {
+				errors = { "underline" },
+				hints = { "underline" },
+				warnings = { "underline" },
+				information = { "underline" },
+			},
+		},
+		coc_nvim = false,
+		lsp_trouble = false,
+		cmp = true,
+		lsp_saga = false,
+		gitgutter = false,
+		gitsigns = true,
+		leap = false,
+		telescope = true,
+		nvimtree = {
+			enabled = true,
+			show_root = true,
+			transparent_panel = false,
+		},
+		neotree = {
+			enabled = false,
+			show_root = true,
+			transparent_panel = false,
+		},
+		dap = {
+			enabled = false,
+			enable_ui = false,
+		},
+		which_key = false,
+		indent_blankline = {
+			enabled = true,
+			colored_indent_levels = true,
+		},
+		dashboard = true,
+		neogit = false,
+		vim_sneak = false,
+		fern = false,
+		barbar = true,
+		bufferline = false,
+		markdown = true,
+		lightspeed = false,
+		ts_rainbow = false,
+		hop = false,
+		notify = false,
+		telekasten = false,
+		symbols_outline = true,
+		mini = false,
+		aerial = false,
+		vimwiki = false,
+		beacon = false,
+	},
+	color_overrides = {},
+	highlight_overrides = {},
 })
 
-local status_ok, _ = pcall(vim.cmd, 'colorscheme ' .. colorscheme)
-if not status_ok then
-  return
-end
+vim.cmd [[colorscheme catppuccin]]
