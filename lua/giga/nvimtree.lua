@@ -99,9 +99,10 @@ nvimtree.setup { -- BEGIN_DEFAULT_OPTS
     indent_markers = {
       enable = true,
       icons = {
-        corner = "└ ",
         edge = "│ ",
-        none = "  ",
+        item = "│",
+        corner = "╰",
+        none = " ",
       },
     },
   },
