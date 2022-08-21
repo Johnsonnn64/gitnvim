@@ -52,7 +52,7 @@ return require('packer').startup(function()
   use 'mbbill/undotree' -- undo tree
   use 'numToStr/Comment.nvim' -- commenter
   use 'lewis6991/gitsigns.nvim' -- git signs
-  use { 'akinsho/toggleterm.nvim', tag = 'v1.*' } -- toggleterm
+  use { 'akinsho/toggleterm.nvim', tag = 'main' } -- toggleterm
   use 'windwp/nvim-autopairs' -- auto pairs
   use { 'phaazon/hop.nvim', branch = 'v1', config = function ()
     require'hop'.setup { keys = 'qweruiopasdfghjklcvnm'}
