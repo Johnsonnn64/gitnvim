@@ -54,7 +54,7 @@ vim.cmd [[
   autocmd BufRead,BufNewFile ~/personal/studies/* set filetype=markdown
   set whichwrap+=<,>,[,]
   autocmd FileType markdown setlocal nocursorline
-  autocmd FileType org set nonumber norelativenumber concealcursor=nc
+  autocmd FileType org setlocal nonumber norelativenumber concealcursor=nc
   autocmd BufEnter * set formatoptions-=cro
   let g:goyo_width = 80
   function! s:goyo_enter()
