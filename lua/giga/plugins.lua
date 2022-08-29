@@ -46,7 +46,6 @@ return require('packer').startup(function()
   use 'lukas-reineke/indent-blankline.nvim' -- lines in tab
   use 'lewis6991/impatient.nvim'
   use 'dstein64/vim-startuptime'
-  use 'junegunn/goyo.vim'
   use 'kyazdani42/nvim-tree.lua' -- file tree
   use { 'akinsho/bufferline.nvim', tag = "v2.*" } -- buffers
   use 'mbbill/undotree' -- undo tree

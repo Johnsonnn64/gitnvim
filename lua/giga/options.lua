@@ -56,14 +56,5 @@ vim.cmd [[
   autocmd FileType markdown setlocal nocursorline
   autocmd FileType org setlocal nonumber norelativenumber concealcursor=nc
   autocmd BufEnter * set formatoptions-=cro
-  let g:goyo_width = 80
-  function! s:goyo_enter()
-    set scrolloff=999 concealcursor=nc
-  endfunction
-  function! s:goyo_exit()
-    set scrolloff=0 concealcursor-=nc
-  endfunction
-  autocmd! User GoyoEnter nested call <SID>goyo_enter()
-  autocmd! User GoyoLeave nested call <SID>goyo_exit()
 ]]
 
