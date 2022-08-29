@@ -48,7 +48,7 @@ return require('packer').startup(function()
   use 'dstein64/vim-startuptime'
   use 'junegunn/goyo.vim'
   use 'kyazdani42/nvim-tree.lua' -- file tree
-  use { 'akinsho/bufferline.nvim', tag = "*" } -- buffers
+  use { 'akinsho/bufferline.nvim', tag = "v2.*" } -- buffers
   use 'mbbill/undotree' -- undo tree
   use 'numToStr/Comment.nvim' -- commenter
   use 'lewis6991/gitsigns.nvim' -- git signs
