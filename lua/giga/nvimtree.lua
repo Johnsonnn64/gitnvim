@@ -4,22 +4,27 @@ if not status_ok then
 end
 
 nvimtree.setup { -- BEGIN_DEFAULT_OPTS
-  respect_buf_cwd = true,
-  create_in_closed_folder = true,
   auto_reload_on_write = true,
+  create_in_closed_folder = true,
   disable_netrw = false,
   hijack_cursor = true,
   hijack_netrw = true,
-  hijack_unnamed_buffer_when_opening = false,
-  ignore_buffer_on_setup = false,
-  open_on_setup = false,
-  open_on_setup_file = false,
-  open_on_tab = false,
   sort_by = "name",
-  sync_root_with_cwd = false,
+  sync_root_with_cwd = true,
+  reload_on_bufenter = true,
+  respect_buf_cwd = true,
   view = {
-    width = 32,
-    height = 30,
+    adaptive_size = true,
+    float = {
+      enable = false,
+      open_win_config = {
+        relative = 'cursor',
+        height = 15,
+        width = 10,
+        row = 2,
+        col = 5,
+      }
+    },
     side = "left",
     preserve_window_proportions = false,
     number = false,
@@ -32,16 +37,11 @@ nvimtree.setup { -- BEGIN_DEFAULT_OPTS
       },
     },
   },
-  hijack_directories = {
-    enable = true,
-    auto_open = true,
-  },
   update_focused_file = {
     enable = true,
     update_root = true,
     ignore_list = {},
   },
-  ignore_ft_on_setup = {'alpha'},
   system_open = {
     cmd = nil,
     args = {},
@@ -57,24 +57,22 @@ nvimtree.setup { -- BEGIN_DEFAULT_OPTS
     },
   },
   renderer = {
-    group_empty = true,
     add_trailing = true,
+    group_empty = true,
     highlight_git = true,
     highlight_opened_files = "all",
-    special_files = {
-
-    },
+    special_files = { },
     icons = {
       padding = " ",
       show = {
-      git = true,
-      file = true,
-      folder = true,
-      folder_arrow = true,
+        git = true,
+        file = true,
+        folder = true,
+        folder_arrow = true,
       },
       glyphs = {
         default = "",
-        symlink = "",
+        symlink = "",
         git = {
           unstaged = "✗",
           staged = "✓",
@@ -102,6 +100,7 @@ nvimtree.setup { -- BEGIN_DEFAULT_OPTS
         edge = "│ ",
         item = "│",
         corner = "╰",
+        bottom = "─",
         none = " ",
       },
     },
@@ -109,7 +108,7 @@ nvimtree.setup { -- BEGIN_DEFAULT_OPTS
   filters = {
     dotfiles = false,
     custom = {"^\\.git"},
-    exclude = {},
+    exclude = {".gitignore"},
   },
   git = {
     enable = true,
@@ -119,7 +118,7 @@ nvimtree.setup { -- BEGIN_DEFAULT_OPTS
   actions = {
     change_dir = {
       enable = true,
-      global = false,
+      global = true,
     },
     open_file = {
       quit_on_open = false,
@@ -132,17 +131,6 @@ nvimtree.setup { -- BEGIN_DEFAULT_OPTS
           buftype = { "nofile", "terminal", "help" },
         },
       },
-    },
-  },
-  log = {
-    enable = false,
-    truncate = false,
-    types = {
-      all = false,
-      config = false,
-      copy_paste = false,
-      git = false,
-      profile = false,
     },
   },
 } -- END_DEFAULT_OPTS
