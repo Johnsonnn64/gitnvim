@@ -110,9 +110,7 @@ cmp.setup {
         luasnip = "[Snip]",
         buffer = "[BUF]",
         path = "[Path]",
-        dictionary = "[DICK]",
         cmdline = "[CMD]"
-        -- look  = "[Look]",
       })[entry.source.name]
       return vim_item
     end,
@@ -124,8 +122,6 @@ cmp.setup {
     { name = "luasnip" },
     { name = "path" },
     { name = "buffer" },
-    { name = "dictionary", keyword_length = 2 },
-    -- { name = "look", keyword_length = 2, option = { convert_case = true, loud = false } },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
@@ -149,10 +145,3 @@ cmp.setup {
     }
   }),
 }
-require("cmp_dictionary").setup({
-  dic = {
-    ["*"] = { "/usr/share/dict/words"}
-  },
-  first_case_insensitive = true,
-  async = true,
-})

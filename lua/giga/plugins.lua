@@ -65,7 +65,7 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-nvim-lua'
   use 'hrsh7th/cmp-cmdline'
-  use 'uga-rosa/cmp-dictionary'
+  -- use 'uga-rosa/cmp-dictionary'
 
   -- snippets
   use 'L3MON4D3/LuaSnip'
