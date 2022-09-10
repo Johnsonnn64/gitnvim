@@ -34,6 +34,9 @@ nvimtree.setup { -- BEGIN_DEFAULT_OPTS
       custom_only = false,
       list = {
         { key = {"l"}, action = "edit" },
+        { key = {"h"}, action = "dir_up" },
+        { key = {"d"}, action = "cut" },
+        { key = {"D"}, action = "remove" },
       },
     },
   },
