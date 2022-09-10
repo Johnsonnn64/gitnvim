@@ -38,7 +38,6 @@ keymap('n', '<leader>q', ":Telescope diagnostics theme=ivy initial_mode=normal l
 
 -- nvimtree
 keymap('n', '<leader>/', ':NvimTreeToggle<CR>', opts)
-keymap('n', '<leader>n/', ':NvimTreeFindFile<CR>', opts)
 
 -- bufferline
 keymap('n', '<leader>d', ':BufferLinePickClose<CR>', opts)
@@ -65,5 +64,4 @@ keymap('n', '<leader>gr', ":Gitsigns reset_hunk<CR>", opts)
 keymap('n', '<leader>gg', ":Goyo<CR>", opts)
 
 -- hop.nvim
-keymap('', '<leader>w', ":HopWord<CR>", opts)
-keymap('', '<leader>h', ":HopLineStart<CR>", opts)
+keymap('', '<leader>w', "<cmd>HopWord<CR>", opts)
