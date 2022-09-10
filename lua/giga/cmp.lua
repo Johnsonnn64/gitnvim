@@ -128,7 +128,7 @@ cmp.setup {
     select = false,
   },
   experimental = {
-    ghost_text = true,
+    ghost_text = false,
   },
   cmp.setup.cmdline(':', {
     mapping = cmp.mapping.preset.cmdline(),
