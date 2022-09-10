@@ -1,5 +1,5 @@
-require 'giga.plugins'
 require 'giga.impatient'
+require 'giga.plugins'
 require 'giga.options'
 require 'giga.keymaps'
 require 'giga.colorscheme'
