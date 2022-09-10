@@ -41,7 +41,7 @@ return require('packer').startup(function()
   }
   use {
     'nvim-lualine/lualine.nvim', -- status line
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true } -- file icon
+    requires = { 'kyazdani42/nvim-web-devicons' } -- file icon
   }
   use 'lukas-reineke/indent-blankline.nvim' -- lines in tab
   use 'lewis6991/impatient.nvim'
