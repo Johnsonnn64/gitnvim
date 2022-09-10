@@ -52,7 +52,7 @@ cmp.setup {
   window = {
     completion = {
       border = 'rounded',
-      winhighlight = 'NormalFloat:NormalFloat',
+      winhighlight = 'NormalFloat:NormalFloat,CursorLine:PmenuSel',
     },
     documentation = {
       border = 'rounded',
