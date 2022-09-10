@@ -5,9 +5,10 @@ end
 
 comment.setup {
   padding = true,
+  ignore = '^$',
   sticky = true,
   mappings = {
     basic = true,
-    extra = false,
+    extra = true,
   }
 }
