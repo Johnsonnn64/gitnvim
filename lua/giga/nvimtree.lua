@@ -110,8 +110,7 @@ nvimtree.setup { -- BEGIN_DEFAULT_OPTS
   },
   filters = {
     dotfiles = false,
-    custom = {"^\\.git"},
-    exclude = {".gitignore"},
+    custom = {"^.git$"},
   },
   git = {
     enable = true,
