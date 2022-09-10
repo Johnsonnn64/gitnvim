@@ -37,6 +37,7 @@ return require('packer').startup(function()
   use {
     "catppuccin/nvim", -- color scheme
     as = "catppuccin",
+    run = ":CatppuccinCompile"
   }
   use {
     'nvim-lualine/lualine.nvim', -- status line
