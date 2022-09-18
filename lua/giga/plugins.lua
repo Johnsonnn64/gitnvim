@@ -46,13 +46,20 @@ return require('packer').startup(function()
     'nvim-lualine/lualine.nvim', -- status line
     requires = { 'kyazdani42/nvim-web-devicons' } -- file icon
   }
-  use 'kyazdani42/nvim-tree.lua' -- file tree
   use { 'akinsho/bufferline.nvim', tag = "v2.*" } -- buffers
   use 'lewis6991/gitsigns.nvim' -- git signs
   use { 'akinsho/toggleterm.nvim', tag = 'main' } -- toggleterm
   use { 'phaazon/hop.nvim', branch = 'v2', config = function ()
     require'hop'.setup { keys = 'qweruiopasdfghjklcvnm'}
   end}
+
+
+  use {
+    'kyazdani42/nvim-tree.lua',
+    opt = true,
+    cmd = 'NvimTreeToggle',
+    config = function() require 'giga.nvimtree' end
+  } -- file tree
 
   -- cmp plugins
   use 'hrsh7th/nvim-cmp'
