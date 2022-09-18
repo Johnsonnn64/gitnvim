@@ -28,16 +28,16 @@ telescope.setup {
         initial_mode = 'normal'
       },
     },
-    frecency = {
-      show_scores = false,
-      show_unindexed = true,
-      ignore_patterns = {"*.git/*", "*/tmp/*"},
-      workspaces = {
-        ["conf"] = "/home/john/.config",
-        ["data"] = "/home/john/.local/share",
-      },
-    },
+    -- frecency = {
+    --   show_scores = false,
+    --   show_unindexed = true,
+    --   ignore_patterns = {"*.git/*", "*/tmp/*"},
+    --   workspaces = {
+    --     ["conf"] = "/home/john/.config",
+    --     ["data"] = "/home/john/.local/share",
+    --   },
+    -- },
   },
 }
-require"telescope".load_extension("frecency")
+-- require"telescope".load_extension("frecency")
 require"telescope".load_extension("ui-select")

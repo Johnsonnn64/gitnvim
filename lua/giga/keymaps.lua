@@ -32,7 +32,7 @@ keymap('n', '<leader><leader>', ':setlocal spell! spelllang=en_us<CR>', opts)
 keymap('n', '<leader>ff', ":Telescope find_files hidden=true theme=dropdown<CR>", opts)
 keymap('n', '<leader>f/', ":Telescope find_files hidden=true theme=dropdown cwd=~<CR>", opts)
 keymap('n', '<leader>fg', ":Telescope live_grep theme=dropdown<CR>", opts)
-keymap('n', '<leader>fr', ":Telescope frecency theme=dropdown previewer=false<CR>", opts)
+keymap('n', '<leader>fr', ":Telescope oldfiles theme=dropdown previewer=false<CR>", opts)
 keymap('n', 'gr', ":Telescope lsp_references theme=ivy initial_mode=normal layout_config={height=0.25}<CR>", opts)
 keymap('n', '<leader>q', ":Telescope diagnostics theme=ivy initial_mode=normal layout_config={height=0.25}<CR>", opts)
 

@@ -99,13 +99,13 @@ return require('packer').startup(function()
   -- telescope
   use {
     'nvim-telescope/telescope.nvim', -- fzf
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = 'nvim-lua/plenary.nvim',
+    opt = true,
+    cmd = 'Telescope',
+    config = function () require'giga.telescope' end
   }
+
   use 'nvim-telescope/telescope-ui-select.nvim'
-  use {
-    "nvim-telescope/telescope-frecency.nvim", -- recent fzf
-    requires = {'tami5/sqlite.lua'}
-  }
 
   -- treesitter
   use {
