@@ -28,12 +28,8 @@ require('packer').init {
 
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
-  -- use {
-  --   'goolord/alpha-nvim',
-  --   config = function ()
-  --     require'alpha'.setup(require'alpha.themes.dashboard'.config) -- start screen
-  --   end
-  -- }
+  use 'glepnir/dashboard-nvim' -- starting screen
+
   use {
     "catppuccin/nvim", -- color scheme
     as = "catppuccin",
