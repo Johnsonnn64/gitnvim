@@ -14,7 +14,7 @@ local options = {
   incsearch = true,                        -- idk just good
   pumheight = 10,                          -- pop up menu height
   showmode = false,                        -- we don't need to see things like -- INSERT -- anymore
-  showtabline = 2,                         -- always show tabs
+  showtabline = 1,                         -- 0=dont show | 1=don't show when 1| 2=always show
   smartcase = true,                        -- smart case
   smartindent = true,                      -- make indenting smarter again
   splitbelow = true,                       -- force all horizontal splits to go below current window

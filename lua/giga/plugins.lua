@@ -46,7 +46,6 @@ return require('packer').startup(function()
     'nvim-lualine/lualine.nvim', -- status line
     requires = { 'kyazdani42/nvim-web-devicons' } -- file icon
   }
-  use { 'akinsho/bufferline.nvim', tag = "v2.*" } -- buffers
   use 'lewis6991/gitsigns.nvim' -- git signs
   use { 'akinsho/toggleterm.nvim', tag = 'main' } -- toggleterm
   use { 'phaazon/hop.nvim', branch = 'v2', config = function ()
@@ -61,6 +60,13 @@ return require('packer').startup(function()
     config = function() require 'giga.nvimtree' end
   } -- file tree
 
+  use {
+    'akinsho/bufferline.nvim',
+    tag = "v2.*",
+    opt = true,
+    event = 'BufAdd',
+    config = function () require 'giga.bufferline' end
+  } -- buffers
 
   use {
     'lewis6991/gitsigns.nvim',
