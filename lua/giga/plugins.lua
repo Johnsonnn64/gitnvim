@@ -28,6 +28,13 @@ require('packer').init {
 
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
+
+  use 'lewis6991/impatient.nvim'
+  use 'lukas-reineke/indent-blankline.nvim' -- lines in tab
+  use 'dstein64/vim-startuptime'
+  use 'mbbill/undotree' -- undo tree
+  use 'numToStr/Comment.nvim' -- commenter
+  use 'windwp/nvim-autopairs' -- auto pairs
   use 'glepnir/dashboard-nvim' -- starting screen
 
   use {
@@ -39,16 +46,10 @@ return require('packer').startup(function()
     'nvim-lualine/lualine.nvim', -- status line
     requires = { 'kyazdani42/nvim-web-devicons' } -- file icon
   }
-  use 'lukas-reineke/indent-blankline.nvim' -- lines in tab
-  use 'lewis6991/impatient.nvim'
-  use 'dstein64/vim-startuptime'
   use 'kyazdani42/nvim-tree.lua' -- file tree
   use { 'akinsho/bufferline.nvim', tag = "v2.*" } -- buffers
-  use 'mbbill/undotree' -- undo tree
-  use 'numToStr/Comment.nvim' -- commenter
   use 'lewis6991/gitsigns.nvim' -- git signs
   use { 'akinsho/toggleterm.nvim', tag = 'main' } -- toggleterm
-  use 'windwp/nvim-autopairs' -- auto pairs
   use { 'phaazon/hop.nvim', branch = 'v2', config = function ()
     require'hop'.setup { keys = 'qweruiopasdfghjklcvnm'}
   end}
