@@ -42,16 +42,16 @@ return require('packer').startup(function()
     as = "catppuccin",
     run = ":CatppuccinCompile"
   }
+
   use {
     'nvim-lualine/lualine.nvim', -- status line
     requires = { 'kyazdani42/nvim-web-devicons' } -- file icon
   }
-  use 'lewis6991/gitsigns.nvim' -- git signs
-  use { 'akinsho/toggleterm.nvim', tag = 'main' } -- toggleterm
-  use { 'phaazon/hop.nvim', branch = 'v2', config = function ()
-    require'hop'.setup { keys = 'qweruiopasdfghjklcvnm'}
-  end}
 
+  use {
+    'akinsho/toggleterm.nvim',
+    tag = 'main'
+  } -- toggleterm
 
   use {
     'kyazdani42/nvim-tree.lua',
