@@ -61,6 +61,15 @@ return require('packer').startup(function()
     config = function() require 'giga.nvimtree' end
   } -- file tree
 
+
+  use {
+    'lewis6991/gitsigns.nvim',
+    opt = true,
+    cmd = 'Gitsigns',
+    config = function () require 'giga.gitsigns' end,
+  } -- git signs
+
+
   -- cmp plugins
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-buffer'
