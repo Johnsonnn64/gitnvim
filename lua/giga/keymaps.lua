@@ -60,8 +60,5 @@ keymap('n', '<leader>gj', ":Gitsigns next_hunk<CR>", opts)
 keymap('n', '<leader>gk', ":Gitsigns prev_hunk<CR>", opts)
 keymap('n', '<leader>gr', ":Gitsigns reset_hunk<CR>", opts)
 
--- goyo
-keymap('n', '<leader>gg', ":Goyo<CR>", opts)
-
 -- hop.nvim
 keymap('', '<leader>w', "<cmd>HopWord<CR>", opts)
