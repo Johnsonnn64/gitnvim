@@ -70,6 +70,14 @@ return require('packer').startup(function()
   } -- git signs
 
 
+  use {
+    'phaazon/hop.nvim',
+    branch = 'v2',
+    opt = true,
+    cmd = 'HopWord',
+    config = function () require'hop'.setup { keys = 'qweruiopasdfghjklcvnm'} end,
+  }
+
   -- cmp plugins
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-buffer'
