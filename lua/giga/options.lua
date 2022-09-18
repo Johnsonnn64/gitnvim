@@ -56,5 +56,6 @@ vim.cmd [[
   autocmd FileType markdown setlocal nocursorline
   autocmd FileType org setlocal nonumber norelativenumber concealcursor=nc
   autocmd BufEnter * set formatoptions-=cro
+  autocmd BufEnter * highlight CursorLine guibg=#2a2b3c
 ]]
 
