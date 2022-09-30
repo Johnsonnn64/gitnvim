@@ -33,7 +33,6 @@ return require('packer').startup(function()
   use 'lukas-reineke/indent-blankline.nvim' -- lines in tab
   use 'dstein64/vim-startuptime'
   use 'mbbill/undotree' -- undo tree
-  use 'windwp/nvim-autopairs' -- auto pairs
   use 'glepnir/dashboard-nvim' -- starting screen
 
   use {
@@ -47,6 +46,13 @@ return require('packer').startup(function()
     },
     config = function () require 'giga.commenter' end
   } -- commenter
+
+  use {
+    'windwp/nvim-autopairs',
+    opt = true,
+    event = { 'InsertEnter', 'CmdlineEnter' },
+    config = function () require 'giga.autopair' end
+  } -- auto pairs
 
   use {
     "catppuccin/nvim", -- color scheme
