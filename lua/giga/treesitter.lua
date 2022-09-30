@@ -6,7 +6,6 @@ end
 configs.setup {
   ensure_isntalled = 'maintained',
   sync_install = false,
-  ignore_install = { '' },
   incremental_selection = {
     enable = true,
     keymaps = {
@@ -17,13 +16,10 @@ configs.setup {
   },
   highlight = {
     enable = true,
-    disable = { '' },
     additional_vim_regex_highlighting = {'org'},
   },
-  indent = { enable = true, disable = { '' } },
-  context_commentstring = {
+  indent = {
     enable = true,
-    enable_autocmd = false,
   },
   playground = {
     enable = true,
