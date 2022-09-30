@@ -96,13 +96,29 @@ return require('packer').startup(function()
   }
 
   -- cmp plugins
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  use 'saadparwaiz1/cmp_luasnip'
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-nvim-lua'
-  use 'hrsh7th/cmp-cmdline'
+  use {
+    'hrsh7th/nvim-cmp',
+    opt = true,
+    requires = {
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
+      'saadparwaiz1/cmp_luasnip',
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-nvim-lua',
+      'hrsh7th/cmp-cmdline',
+    },
+    ft = {
+      'lua',
+      'html',
+      'css',
+      'c',
+      'cpp',
+      'sh',
+      'javascript',
+    },
+    event = { 'InsertEnter', 'CmdlineEnter' },
+    config = function () require 'giga.cmp' end
+  }
   -- use 'uga-rosa/cmp-dictionary'
 
   -- snippets
