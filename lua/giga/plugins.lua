@@ -98,9 +98,30 @@ return require('packer').startup(function()
   use 'L3MON4D3/LuaSnip'
   use 'rafamadriz/friendly-snippets'
 
-  -- lsp
-  use 'neovim/nvim-lspconfig' -- enable LSP
-  use 'williamboman/nvim-lsp-installer' -- lsp installer
+  use {
+    'williamboman/nvim-lsp-installer',
+    opt = true,
+    cmd = 'LspInstall',
+    ft = {
+      'lua',
+      'html',
+      'css',
+      'c',
+      'cpp',
+      'sh',
+      'javascript',
+    },
+    config = function ()
+      require('giga.lsp.lsp-installer')
+      require('giga.lsp.handlers').setup()
+    end,
+    requires = {
+      {
+        'neovim/nvim-lspconfig',
+        config = function () require'lspconfig' end
+      }
+    }
+  }-- lsp installer
 
   -- telescope
   use {
