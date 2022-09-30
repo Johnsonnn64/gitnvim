@@ -61,7 +61,10 @@ return require('packer').startup(function()
 
   use {
     'akinsho/toggleterm.nvim',
-    tag = 'main'
+    tag = 'main',
+    opt = true,
+    keys = "<c-\\>",
+    config = function () require 'giga.toggleterm' end
   } -- toggleterm
 
   use {
