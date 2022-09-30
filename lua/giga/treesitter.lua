@@ -7,6 +7,14 @@ configs.setup {
   ensure_isntalled = 'maintained',
   sync_install = false,
   ignore_install = { '' },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "gnn",
+      node_incremental = "gin",
+      node_decremental = "gdn",
+    },
+  },
   highlight = {
     enable = true,
     disable = { '' },
