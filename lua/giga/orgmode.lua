@@ -10,9 +10,3 @@ require('orgmode').setup({
   calendar_week_start_day = 0,
   win_split_mode = "edit",
 })
-
--- bullet symbols
-require('org-bullets').setup {
-  -- symbols = { "◉", "○", "✸", "✿" }
-  concealcursor = true,
-}

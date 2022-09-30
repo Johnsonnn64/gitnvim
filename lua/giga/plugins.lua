@@ -126,7 +126,21 @@ return require('packer').startup(function()
   }
 
   -- org mode
-  use 'nvim-orgmode/orgmode'
-  use 'akinsho/org-bullets.nvim'
+  use {
+    'nvim-orgmode/orgmode',
+    opt = true,
+    ft = 'org',
+    keys = { '<leader>oa', '<leader>oc' },
+    config = function () require 'giga.orgmode' end,
+    requires =  {
+      'akinsho/org-bullets.nvim',
+      config = function ()
+        require('org-bullets').setup {
+          -- symbols = { "◉", "○", "✸", "✿" }
+          concealcursor = true,
+        }
+      end
+    }
+  }
 
 end)
