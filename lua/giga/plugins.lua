@@ -33,9 +33,20 @@ return require('packer').startup(function()
   use 'lukas-reineke/indent-blankline.nvim' -- lines in tab
   use 'dstein64/vim-startuptime'
   use 'mbbill/undotree' -- undo tree
-  use 'numToStr/Comment.nvim' -- commenter
   use 'windwp/nvim-autopairs' -- auto pairs
   use 'glepnir/dashboard-nvim' -- starting screen
+
+  use {
+    'numToStr/Comment.nvim',
+    opt = true,
+    keys = {
+      {'n', 'gcc'},
+      {'n', 'gbb'},
+      {'x', 'gc'},
+      {'x', 'gb'},
+    },
+    config = function () require 'giga.commenter' end
+  } -- commenter
 
   use {
     "catppuccin/nvim", -- color scheme
