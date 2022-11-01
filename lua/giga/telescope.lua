@@ -41,3 +41,4 @@ telescope.setup {
 }
 -- require"telescope".load_extension("frecency")
 require"telescope".load_extension("ui-select")
+require("telescope").load_extension("notify")

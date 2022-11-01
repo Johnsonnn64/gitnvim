@@ -200,4 +200,9 @@ return require('packer').startup(function()
     }
   }
 
+  use {
+    'rcarriga/nvim-notify',
+    config = function() require 'giga.notify' end
+  }
+
 end)
