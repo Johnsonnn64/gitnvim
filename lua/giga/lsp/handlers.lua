@@ -76,12 +76,25 @@ local function lsp_keymaps(bufnr)
   vim.cmd [[ command! Format execute 'lua vim.lsp.buf.format({ async = true, })' ]]
 end
 
+-- M.on_attach = function(client, bufnr)
+--   if client.name == "tsserver" then
+--     client.resolved_capabilities.document_formatting = false
+--   end
+--   lsp_keymaps(bufnr)
+--   -- lsp_highlight_document(client)
+-- end
 M.on_attach = function(client, bufnr)
-  if client.name == "tsserver" then
-    client.resolved_capabilities.document_formatting = false
+  if client.name == 'tsserver' then
+    vim.cmd(
+      [[
+        augroup LspFormatting
+        autocmd! * <buffer>
+        autocmd BufWritePre <buffer> lua vim.lsp.buf.format()
+        augroup END
+      ]]
+    )
   end
   lsp_keymaps(bufnr)
-  -- lsp_highlight_document(client)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -91,6 +104,6 @@ if not status_ok then
   return
 end
 
-M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 return M
