@@ -39,19 +39,19 @@ return require('packer').startup(function()
     'numToStr/Comment.nvim',
     opt = true,
     keys = {
-      {'n', 'gcc'},
-      {'n', 'gbb'},
-      {'x', 'gc'},
-      {'x', 'gb'},
+      { 'n', 'gcc' },
+      { 'n', 'gbb' },
+      { 'x', 'gc' },
+      { 'x', 'gb' },
     },
-    config = function () require 'giga.commenter' end
+    config = function() require 'giga.commenter' end
   } -- commenter
 
   use {
     'windwp/nvim-autopairs',
     opt = true,
     event = { 'InsertEnter', 'CmdlineEnter' },
-    config = function () require 'giga.autopair' end
+    config = function() require 'giga.autopair' end
   } -- auto pairs
 
   use {
@@ -70,7 +70,7 @@ return require('packer').startup(function()
     tag = 'main',
     opt = true,
     keys = "<c-\\>",
-    config = function () require 'giga.toggleterm' end
+    config = function() require 'giga.toggleterm' end
   } -- toggleterm
 
   use {
@@ -85,14 +85,14 @@ return require('packer').startup(function()
     tag = "v2.*",
     opt = true,
     event = 'BufAdd',
-    config = function () require 'giga.bufferline' end
+    config = function() require 'giga.bufferline' end
   } -- buffers
 
   use {
     'lewis6991/gitsigns.nvim',
     opt = true,
     cmd = 'Gitsigns',
-    config = function () require 'giga.gitsigns' end,
+    config = function() require 'giga.gitsigns' end,
   } -- git signs
 
 
@@ -101,7 +101,7 @@ return require('packer').startup(function()
     branch = 'v2',
     opt = true,
     cmd = 'HopWord',
-    config = function () require'hop'.setup { keys = 'qweruiopasdfghjklcvnm'} end,
+    config = function() require 'hop'.setup { keys = 'qweruiopasdfghjklcvnm' } end,
   }
 
   -- cmp plugins
@@ -126,7 +126,7 @@ return require('packer').startup(function()
       'javascript',
     },
     event = { 'InsertEnter', 'CmdlineEnter' },
-    config = function () require 'giga.cmp' end
+    config = function() require 'giga.cmp' end
   }
   -- use 'uga-rosa/cmp-dictionary'
 
@@ -147,17 +147,17 @@ return require('packer').startup(function()
       'sh',
       'javascript',
     },
-    config = function ()
+    config = function()
       require('giga.lsp.lsp-installer')
       require('giga.lsp.handlers').setup()
     end,
     requires = {
       {
         'neovim/nvim-lspconfig',
-        config = function () require'lspconfig' end
+        config = function() require 'lspconfig' end
       }
     }
-  }-- lsp installer
+  } -- lsp installer
 
   -- telescope
   use {
@@ -165,7 +165,7 @@ return require('packer').startup(function()
     requires = 'nvim-lua/plenary.nvim',
     opt = true,
     cmd = 'Telescope',
-    config = function () require'giga.telescope' end
+    config = function() require 'giga.telescope' end
   }
 
   use 'nvim-telescope/telescope-ui-select.nvim'
@@ -185,13 +185,10 @@ return require('packer').startup(function()
   -- org mode
   use {
     'nvim-orgmode/orgmode',
-    opt = true,
-    ft = 'org',
-    keys = { '<leader>oa', '<leader>oc' },
-    config = function () require 'giga.orgmode' end,
-    requires =  {
+    config = function() require 'giga.orgmode' end,
+    requires = {
       'akinsho/org-bullets.nvim',
-      config = function ()
+      config = function()
         require('org-bullets').setup {
           -- symbols = { "◉", "○", "✸", "✿" }
           concealcursor = true,
