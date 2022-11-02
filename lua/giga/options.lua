@@ -49,13 +49,16 @@ vim.opt.shortmess:append 'cA'
 vim.opt.shortmess:remove 'T'
 -- autocmd BufWritePre * %s/\s\+$//e
 
-
 vim.cmd [[
-  autocmd BufRead,BufNewFile ~/personal/studies/* set filetype=markdown
+  autocmd BufRead,BufNewFile ~/personal/s*/* set filetype=markdown
   set whichwrap+=<,>,[,]
-  autocmd FileType markdown setlocal nocursorline
-  autocmd FileType org setlocal nonumber norelativenumber concealcursor=nc
+  " autocmd FileType markdown setlocal nocursorline
+  autocmd FileType markdown,org setlocal nonumber norelativenumber concealcursor=nc
   autocmd BufEnter * set formatoptions-=cro
   autocmd BufEnter * highlight CursorLine guibg=#2a2b3c
+  function! FormatNumber() range
+    '<,'>s/^\([0-9]*\.\s*\)*/\=(line('.') - line("'<") + 1).'. ' 
+  endfunction
+  command! -range FormatNumber call FormatNumber()
 ]]
 
