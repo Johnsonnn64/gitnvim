@@ -8,10 +8,10 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- switch through windows
-keymap('', '<c-h>', '<C-w>h', opts)
-keymap('', '<c-j>', '<C-w>j', opts)
-keymap('', '<c-k>', '<C-w>k', opts)
-keymap('', '<c-l>', '<C-w>l', opts)
+-- keymap('n', '<c-h>', '<C-w>h', opts)
+-- keymap('n', '<c-j>', '<C-w>j', opts)
+-- keymap('n', '<c-k>', '<C-w>k', opts)
+-- keymap('n', '<c-l>', '<C-w>l', opts)
 
 -- resize
 keymap('n', '<Up>', ':resize +2<CR>', opts)
@@ -35,6 +35,7 @@ keymap('n', '<leader>fg', ":Telescope live_grep theme=dropdown<CR>", opts)
 keymap('n', '<leader>fr', ":Telescope oldfiles theme=dropdown previewer=false<CR>", opts)
 keymap('n', 'gr', ":Telescope lsp_references theme=ivy initial_mode=normal layout_config={height=0.25}<CR>", opts)
 keymap('n', '<leader>q', ":Telescope diagnostics theme=ivy initial_mode=normal layout_config={height=0.25}<CR>", opts)
+keymap('n', '<leader>fn', ":Telescope notify theme=dropdown<CR>", opts)
 
 -- nvimtree
 keymap('n', '<leader>/', ':NvimTreeToggle<CR>', opts)
@@ -62,3 +63,6 @@ keymap('n', '<leader>gr', ":Gitsigns reset_hunk<CR>", opts)
 
 -- hop.nvim
 keymap('', '<leader>w', "<cmd>HopWord<CR>", opts)
+
+-- custom
+keymap('v', '<leader>n', ':FormatNumber<CR>', opts)
