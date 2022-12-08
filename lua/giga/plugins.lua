@@ -34,6 +34,10 @@ return require('packer').startup(function()
   use 'dstein64/vim-startuptime'
   use 'mbbill/undotree' -- undo tree
   use 'glepnir/dashboard-nvim' -- starting screen
+  use {
+    'brenoprata10/nvim-highlight-colors',
+    config = function() require ('nvim-highlight-colors').setup {} end
+  }
 
   use {
     'numToStr/Comment.nvim',
