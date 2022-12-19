@@ -88,7 +88,7 @@ return require('packer').startup(function()
     'lewis6991/gitsigns.nvim',
     opt = true,
     cmd = 'Gitsigns',
-    config = function() require 'giga.gitsigns' end,
+    config = function() require 'giga.gitsigns' end
   } -- git signs
 
 
@@ -97,7 +97,7 @@ return require('packer').startup(function()
     branch = 'v2',
     opt = true,
     cmd = 'HopWord',
-    config = function() require 'hop'.setup { keys = 'qweruiopasdfghjklcvnm' } end,
+    config = function() require 'hop'.setup { keys = 'qweruiopasdfghjklcvnm' } end
   }
 
   -- cmp plugins
@@ -181,7 +181,6 @@ return require('packer').startup(function()
   -- org mode
   use {
     'nvim-orgmode/orgmode',
-    config = function() require 'giga.orgmode' end,
     requires = {
       'akinsho/org-bullets.nvim',
       config = function()
@@ -190,7 +189,8 @@ return require('packer').startup(function()
           concealcursor = true,
         }
       end
-    }
+    },
+    config = function() require 'giga.orgmode' end
   }
 
   use {
