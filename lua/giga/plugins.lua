@@ -28,6 +28,8 @@ return require('packer').startup(function()
   use 'glepnir/dashboard-nvim' -- starting screen
   use {
     'brenoprata10/nvim-highlight-colors',
+    opt = true,
+    ft = { 'css' },
     config = function() require ('nvim-highlight-colors').setup {} end
   }
 
