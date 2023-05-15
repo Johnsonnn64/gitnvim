@@ -144,6 +144,7 @@ return require('packer').startup(function()
       'cpp',
       'sh',
       'javascript',
+      'python',
     },
     config = function()
       require('giga.lsp.lsp-installer')
