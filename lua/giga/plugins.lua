@@ -175,6 +175,10 @@ return require('packer').startup(function()
   }
 
   use {
+    "windwp/nvim-ts-autotag"
+  }
+
+  use {
     'nvim-treesitter/playground',
     opt = true,
     cmd = 'TSPlaygroundToggle'
