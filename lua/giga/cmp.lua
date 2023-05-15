@@ -62,7 +62,7 @@ cmp.setup {
   mapping = {
     ['<C-e>'] = cmp.mapping(cmp.mapping.scroll_docs(-1), { 'i', 'c' }),
     ['<C-y>'] = cmp.mapping(cmp.mapping.scroll_docs(1), { 'i', 'c' }),
-    ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+    ['<C-p>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
     ['<C-c>'] = cmp.mapping {
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
