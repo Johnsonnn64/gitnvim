@@ -25,7 +25,7 @@ return require('packer').startup(function()
   use 'lukas-reineke/indent-blankline.nvim' -- lines in tab
   use 'dstein64/vim-startuptime'
   use 'mbbill/undotree' -- undo tree
-  use 'glepnir/dashboard-nvim' -- starting screen
+  -- use 'glepnir/dashboard-nvim' -- starting screen
   use {
     'brenoprata10/nvim-highlight-colors',
     opt = true,
