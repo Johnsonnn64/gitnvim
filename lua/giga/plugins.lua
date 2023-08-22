@@ -145,12 +145,6 @@ return require ('packer').startup(function()
       'neovim/nvim-lspconfig'
     },
   }
-  -- use {
-  --   'neovim/nvim-lspconfig',
-  --   requires = 'williamboman/mason-lspconfig',
-  --   after = 'mason',
-  --   config = function() require ('giga.lsp.lspconfig') end,
-  -- }
 
   -- telescope
   use {
