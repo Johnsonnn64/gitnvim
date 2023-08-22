@@ -1,7 +1,8 @@
-require('orgmode').setup_ts_grammar()
+
+require ('orgmode').setup_ts_grammar()
 
 -- orgmode
-require('orgmode').setup {
+require ('orgmode').setup {
   org_agenda_files = { '~/personal/org/*' },
   org_archive_location = 'archive/%s_archive',
   org_agenda_start_on_weekday = 7,

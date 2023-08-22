@@ -1,4 +1,4 @@
-require("bufferline").setup{
+require ("bufferline").setup{
   options = {
     modified_icon = "ノ",
     tab_size = 14,

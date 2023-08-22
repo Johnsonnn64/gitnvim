@@ -1,4 +1,4 @@
-require('toggleterm').setup {
+require ('toggleterm').setup {
   size = 17,
   open_mapping = [[<c-\>]],
   direction = "float",

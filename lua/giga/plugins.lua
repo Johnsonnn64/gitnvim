@@ -10,21 +10,21 @@
 -- end
 
 -- popup packer
-require('packer').init {
+require ('packer').init {
   display = {
     open_fn = function()
-      return require('packer.util').float { border = 'rounded' }
+      return require ('packer.util').float { border = 'rounded' }
     end,
   },
 }
 
-return require('packer').startup(function()
+return require ('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
   use 'lewis6991/impatient.nvim'
   use {
     'lukas-reineke/indent-blankline.nvim',
-    config = function() require("indent_blankline").setup {show_current_context = true} end
+    config = function() require ("indent_blankline").setup {show_current_context = true} end
   } -- lines in tab
   use 'dstein64/vim-startuptime'
   use 'mbbill/undotree' -- undo tree
@@ -137,25 +137,20 @@ return require('packer').startup(function()
 
   use {
     'williamboman/mason.nvim',
-    ft = {
-      'lua',
-      'html',
-      'css',
-      'c',
-      'cpp',
-      'sh',
-      'javascript',
-      'python',
-    },
+    config = function ()
+      require'giga.lsp.lspconfig'
+    end,
     requires = {
       'williamboman/mason-lspconfig',
-      'neovim/nvim-lspconfig',
+      'neovim/nvim-lspconfig'
     },
-    config = function() 
-      require('giga.lsp.handlers').setup()
-      require('giga.lsp.mason') 
-    end,
   }
+  -- use {
+  --   'neovim/nvim-lspconfig',
+  --   requires = 'williamboman/mason-lspconfig',
+  --   after = 'mason',
+  --   config = function() require ('giga.lsp.lspconfig') end,
+  -- }
 
   -- telescope
   use {
@@ -183,21 +178,6 @@ return require('packer').startup(function()
     opt = true,
     cmd = 'TSPlaygroundToggle'
   }
-
-  --[[ -- org mode
-  use {
-    'nvim-orgmode/orgmode',
-    requires = {
-      'akinsho/org-bullets.nvim',
-      config = function()
-        require('org-bullets').setup {
-          -- symbols = { "◉", "○", "✸", "✿" }
-          concealcursor = true,
-        }
-      end
-    },
-    config = function() require 'giga.orgmode' end
-  } ]]
 
   use {
     'rcarriga/nvim-notify',
