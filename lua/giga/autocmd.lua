@@ -3,7 +3,7 @@ AUNVIM = vim.api.nvim_create_augroup("neovim", {clear = true})
 
 AC("BufEnter", {
   pattern = "*",
-  command = "highlight CursorLine guibg=#2a2b3c",
+  command = "highlight CursorLine guibg=#2a2b3c | highlight IndentBlanklineChar guifg=#585b70",
   group = AUNVIM
 })
 AC("BufRead", {
