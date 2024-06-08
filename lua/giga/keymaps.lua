@@ -38,6 +38,9 @@ keymap('n', '<leader>fn', ":Telescope notify theme=dropdown<CR>", opts)
 -- nvimtree
 keymap('n', '<leader>/', ':NvimTreeToggle<CR>', opts)
 
+-- notify
+keymap('n', '<leader>e', ":lua require('notify').dismiss()<CR>", opts)
+
 -- bufferline
 keymap('n', '<leader>d', ':BufferLinePickClose<CR>', opts)
 keymap('n', '<leader>bt', ':BufferLineSortByTabs<CR>', opts)
