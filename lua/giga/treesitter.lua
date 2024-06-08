@@ -10,13 +10,14 @@ configs.setup {
     enable = true,
     keymaps = {
       init_selection = "gnn",
+      scope_incremental = "gsi",
       node_incremental = "gin",
       node_decremental = "gdn",
     },
   },
   highlight = {
     enable = true,
-    additional_vim_regex_highlighting = {'org'},
+    -- additional_vim_regex_highlighting = {'org'},
   },
   indent = {
     enable = true,
