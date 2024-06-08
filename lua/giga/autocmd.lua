@@ -26,8 +26,10 @@ AC("BufEnter", {
   command = "set formatoptions-=cro",
   group =  AUNVIM
 })
-AC("BufWritePost", {
-  pattern = "plugins.lua",
-  command = "source % | PackerSync",
   group = AUNVIM
 })
+-- AC("BufWritePost", {
+--  pattern = "plugins.lua",
+--  command = "source % | PackerSync",
+--  group = AUNVIM
+-- })

@@ -1,179 +1,208 @@
 -- local fn = vim.fn
 
--- auto install packer.nvim
--- local install_path = fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
--- if fn.empty(fn.glob(install_path)) > 0 then
---   PACKER_BOOTSTRAP = fn.system {
---     'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path,
---   }
---   print 'Installing packer... reopen Nvim'
--- end
+-- autoinstall lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+-- set leader key before lazy.nvim
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -- popup packer
-require ('packer').init {
+--[[ require ('packer').init {
   display = {
     open_fn = function()
       return require ('packer.util').float { border = 'rounded' }
     end,
   },
-}
+} ]]
 
-return require ('packer').startup(function()
-  use 'wbthomason/packer.nvim'
+return require ('lazy').setup({
 
-  use {
-    'lukas-reineke/indent-blankline.nvim',
-    config = function() require ("indent_blankline").setup {show_current_context = true} end
-  } -- lines in tab
-  use 'dstein64/vim-startuptime'
-  use 'mbbill/undotree' -- undo tree
-  use {
+  'dstein64/vim-startuptime', -- startuptime measure
+  'mbbill/undotree', -- undo tree
+  { 'lukas-reineke/indent-blankline.nvim', main = "ibl" }, -- line in indentions 
+
+  { -- highlight css color codes
     'brenoprata10/nvim-highlight-colors',
     opt = true,
     ft = { 'css' },
-    config = function() require ('nvim-highlight-colors').setup {} end
-  }
+    config = function()
+      require 'nvim-highlight-colors'.setup {}
+    end
+  },
 
-  use {
+  { -- commenter
     'numToStr/Comment.nvim',
     opt = true,
     keys = {
-      { 'n', 'gcc' },
-      { 'n', 'gbb' },
-      { 'x', 'gc' },
-      { 'x', 'gb' },
+      { 'gcc' },
+      { 'gbb' },
+      { 'gc', mode = 'x' },
+      { 'gb', mode = 'x' },
     },
-    config = function() require 'giga.commenter' end
-  } -- commenter
+    config = function()
+      require 'giga.commenter'
+    end
+  },
 
-  use {
+  { -- auto pairs
     'windwp/nvim-autopairs',
     opt = true,
     event = { 'InsertEnter', 'CmdlineEnter' },
-    config = function() require 'giga.autopair' end
-  } -- auto pairs
+    config = function()
+      require 'giga.autopair'
+    end
+  },
 
-  use {
-    "catppuccin/nvim", -- color scheme
+  { -- color scheme
+    "catppuccin/nvim",
     as = "catppuccin",
-    run = ":CatppuccinCompile"
-  }
+    build = ":CatppuccinCompile"
+  },
 
-  use {
-    'nvim-lualine/lualine.nvim', -- status line
-    requires = { 'kyazdani42/nvim-web-devicons' } -- file icon
-  }
+  { -- status line
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'kyazdani42/nvim-web-devicons' } -- file icon
+  },
 
-  use {
+  { -- toggleterm
     'akinsho/toggleterm.nvim',
-    tag = 'main',
     opt = true,
+    cmd = 'TermExec',
     keys = "<c-\\>",
-    config = function() require 'giga.toggleterm' end
-  } -- toggleterm
+    config = function()
+      require 'giga.toggleterm'
+    end
+  },
 
-  use {
+  { -- file tree
     'kyazdani42/nvim-tree.lua',
     opt = true,
     cmd = 'NvimTreeToggle',
-    config = function() require 'giga.nvimtree' end
-  } -- file tree
+    config = function()
+      require 'giga.nvimtree'
+    end
+  },
 
-  use {
+  { -- buffers
     'akinsho/bufferline.nvim',
-    tag = "*",
     opt = true,
     event = 'BufAdd',
-    config = function() require 'giga.bufferline' end
-  } -- buffers
+    config = function()
+      require 'giga.bufferline'
+    end
+  },
 
-  use {
+  { -- git signs
     'lewis6991/gitsigns.nvim',
     opt = true,
     cmd = 'Gitsigns',
-    config = function() require 'giga.gitsigns' end
-  } -- git signs
+    config = function()
+      require 'giga.gitsigns'
+    end
+  },
 
 
-  use {
+  { -- better hop motion
     'phaazon/hop.nvim',
     branch = 'v2',
     opt = true,
     cmd = 'HopWord',
-    config = function() require 'hop'.setup { keys = 'qweruiopasdfghjklcvnm' } end
-  }
+    config = function()
+      require 'hop'.setup { keys = 'qweruiopasdfghjklcvnm' }
+    end
+  },
 
-  -- cmp plugins
-  use {
+  { -- cmp plugins
     'hrsh7th/nvim-cmp',
     opt = true,
-    requires = {
+    dependencies = {
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-path',
       'saadparwaiz1/cmp_luasnip',
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-nvim-lua',
       'hrsh7th/cmp-cmdline',
+      'L3MON4D3/LuaSnip',
+      'rafamadriz/friendly-snippets',
+      -- 'uga-rosa/cmp-dictionary',
     },
-    ft = {
-      'lua',
-      'html',
-      'css',
-      'c',
-      'cpp',
-      'sh',
-      'javascript',
-    },
+    ft = require "giga.lsp.lsp-list".ft_list,
     event = { 'InsertEnter', 'CmdlineEnter' },
-    config = function() require 'giga.cmp' end
-  }
-  -- use 'uga-rosa/cmp-dictionary'
+    config = function()
+      require 'giga.cmp'
+    end
+  },
 
-  -- snippets
-  use 'L3MON4D3/LuaSnip'
-  use 'rafamadriz/friendly-snippets'
-
-  use {
-    'williamboman/mason.nvim',
-    config = function ()
-      require'giga.lsp.lspconfig'
-    end,
-    requires = {
+  { -- snippets
+    'neovim/nvim-lspconfig',
+    ft = require "giga.lsp.lsp-list".ft_list,
+    dependencies = {
+      'williamboman/mason.nvim',
       'williamboman/mason-lspconfig',
-      'neovim/nvim-lspconfig'
     },
-  }
+    config = function ()
+      require 'giga.lsp.lspconfig'
+    end,
+  },
 
-  -- telescope
-  use {
+  {
+    'mfussenegger/nvim-jdtls',
+    ft = 'java',
+  },
+
+  { -- telescope
     'nvim-telescope/telescope.nvim', -- fzf
-    requires = 'nvim-lua/plenary.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope-ui-select.nvim',
+    },
     opt = true,
     cmd = 'Telescope',
-    config = function() require 'giga.telescope' end
-  }
-
-  use 'nvim-telescope/telescope-ui-select.nvim'
+    config = function()
+      require 'giga.telescope'
+    end
+  },
 
   -- treesitter
-  use {
+  {
     'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate',
-  }
+    dependencies = {
+      "windwp/nvim-ts-autotag"
+    },
+    build = ':TSUpdate',
+  },
 
-  use {
-    "windwp/nvim-ts-autotag"
-  }
-
-  use {
+  {
     'nvim-treesitter/playground',
     opt = true,
     cmd = 'TSPlaygroundToggle'
-  }
+  },
 
-  use {
+  { -- notification for nvim
     'rcarriga/nvim-notify',
-    config = function() require 'giga.notify' end
+    config = function()
+      require 'giga.notify'
+    end
+  },
+
+  { -- smooth scrolling
+    'karb94/neoscroll.nvim',
+    config = function ()
+      require 'neoscroll'.setup()
+    end
   }
 
-end)
+})
+
