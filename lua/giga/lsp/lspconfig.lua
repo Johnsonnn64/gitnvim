@@ -1,6 +1,6 @@
-require 'giga.lsp.handlers'.setup()
-require ("mason").setup()
+require ('giga.lsp.handlers').setup()
 local lsp_list = require ('giga.lsp.lsp-list')
+require ('mason').setup()
 
 require("mason-lspconfig").setup({
   ensure_installed = lsp_list.lsp_list
