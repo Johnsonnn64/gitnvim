@@ -21,7 +21,6 @@ require ('packer').init {
 return require ('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
-  use 'lewis6991/impatient.nvim'
   use {
     'lukas-reineke/indent-blankline.nvim',
     config = function() require ("indent_blankline").setup {show_current_context = true} end
