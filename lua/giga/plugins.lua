@@ -28,7 +28,6 @@ return require ('packer').startup(function()
   } -- lines in tab
   use 'dstein64/vim-startuptime'
   use 'mbbill/undotree' -- undo tree
-  -- use 'glepnir/dashboard-nvim' -- starting screen
   use {
     'brenoprata10/nvim-highlight-colors',
     opt = true,
