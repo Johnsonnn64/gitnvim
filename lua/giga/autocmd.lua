@@ -31,6 +31,23 @@ AC("FileType", {
   command = "LspStart",
   group = AUNVIM
 })
+-- nvimtree
+AC("BufEnter", {
+  pattern = "*",
+  command = 'silent if (winnr("$") == 1 && &filetype == "nvimtree") | q | endif',
+  group = AUNVIM
+})
+AC("BufEnter", {
+	pattern = "*",
+	nested = true,
+	callback = function()
+		if vim.fn.winnr "$" == 1 and vim.fn.bufname() == "NvimTree_" .. vim.fn.tabpagenr() then
+			vim.api.nvim_command ":silent qa!"
+		end
+	end,
+  group = AUNVIM
+})
+
 -- AC("BufWritePost", {
 --  pattern = "plugins.lua",
 --  command = "source % | PackerSync",
