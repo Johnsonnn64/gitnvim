@@ -67,5 +67,13 @@ keymap('n', '<leader>gr', ":Gitsigns reset_hunk<CR>", opts)
 -- hop.nvim
 keymap('', '<leader>w', "<cmd>HopWord<CR>", opts)
 
+-- toggleterm
+keymap('t', '<esc>', '<cmd>ToggleTerm<CR>', opts)
+keymap('t', '<C-w>h', [[<Cmd>wincmd h<CR>]], opts)
+keymap('t', '<C-w>j', [[<Cmd>wincmd j<CR>]], opts)
+keymap('t', '<C-w>k', [[<Cmd>wincmd k<CR>]], opts)
+keymap('t', '<C-w>l', [[<Cmd>wincmd l<CR>]], opts)
+keymap('n', '<leader>jr', "<cmd>TermExec cmd='jrun %' go_back=0<CR>", opts)
+
 -- custom
 keymap('v', '<leader>n', ':FormatNumber<CR>', opts)
