@@ -1,2 +1,2 @@
 # gitnvim
-my gitnvim
+nvim configuration
