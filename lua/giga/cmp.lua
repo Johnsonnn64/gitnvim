@@ -16,32 +16,33 @@ local check_backspace = function()
 end
 
 local kind_icons = {
-  Text = "",
-  Method = "m",
-  Function = "",
-  Constructor = "",
-  Field = "",
-  Variable = "",
-  Class = "",
+  Text = "",
+  Method = "󰆧",
+  Function = "󰊕",
+  Constructor = "",
+  Field = "󰇽",
+  Variable = "󰫧",
+  Class = "󰠱",
   Interface = "",
   Module = "",
-  Property = "",
+  Property = "󰜢",
   Unit = "",
-  Value = "",
+  Value = "󰎠",
   Enum = "",
-  Keyword = "",
-  Snippet = "",
-  Color = "",
-  File = "",
+  Keyword = "󰌋",
+  Snippet = "",
+  Color = "󰏘",
+  File = "󰈙",
   Reference = "",
-  Folder = "",
+  Folder = "󰉋",
   EnumMember = "",
-  Constant = "",
+  Constant = "󰏿",
   Struct = "",
   Event = "",
-  Operator = "",
-  TypeParameter = "",
+  Operator = "󰆕",
+  TypeParameter = "󰅲",
 }
+
 
 cmp.setup {
   snippet = {
@@ -106,10 +107,9 @@ cmp.setup {
       vim_item.menu = ({
         nvim_lsp = "[LSP]",
         nvim_lua = "[LUA]",
-        orgmode = "[ORG]",
-        luasnip = "[Snip]",
+        luasnip = "[SNIP]",
         buffer = "[BUF]",
-        path = "[Path]",
+        path = "[PATH]",
         cmdline = "[CMD]"
       })[entry.source.name]
       return vim_item
@@ -118,7 +118,6 @@ cmp.setup {
   sources = {
     { name = "nvim_lua" },
     { name = "nvim_lsp" },
-    { name = "orgmode" },
     { name = "luasnip" },
     { name = "path" },
     { name = "buffer" },
