@@ -39,6 +39,7 @@ local options = {
   linebreak = true,                        -- break words at the end of line
   foldenable = false,
   mouse = 'a',
+  winborder = 'rounded',
 }
 
 for k, v in pairs(options) do
