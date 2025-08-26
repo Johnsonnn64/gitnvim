@@ -137,7 +137,6 @@ return require ('lazy').setup({
       'rafamadriz/friendly-snippets',
       -- 'uga-rosa/cmp-dictionary',
     },
-    ft = require "giga.lsp.lsp-list".ft_list,
     event = { 'InsertEnter', 'CmdlineEnter' },
     config = function()
       require 'giga.cmp'
@@ -146,7 +145,6 @@ return require ('lazy').setup({
 
   { -- snippets
     'neovim/nvim-lspconfig',
-    ft = require "giga.lsp.lsp-list".ft_list,
     dependencies = {
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig',
