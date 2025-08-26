@@ -60,17 +60,7 @@ local function lsp_keymaps(bufnr)
   vim.cmd [[ command! Format execute 'lua vim.lsp.buf.format({ async = true, })' ]]
 end
 
-M.on_attach = function(client, bufnr)
-  -- if client.name == 'tsserver' then
-  --   vim.cmd(
-  --     [[
-  --       augroup LspFormatting
-  --       autocmd! * <buffer>
-  --       autocmd BufWritePre <buffer> lua vim.lsp.buf.format()
-  --       augroup END
-  --     ]]
-  --   )
-  -- end
+M.on_attach = function(bufnr)
   lsp_keymaps(bufnr)
 end
 

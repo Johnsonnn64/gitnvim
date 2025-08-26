@@ -153,7 +153,7 @@ return require ('lazy').setup({
       'williamboman/mason-lspconfig',
     },
     config = function ()
-      require 'giga.lsp.lspconfig'
+      require 'giga.lspconfig'
     end,
   },
 

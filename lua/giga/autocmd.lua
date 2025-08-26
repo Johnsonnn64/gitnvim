@@ -26,11 +26,11 @@ AC("BufEnter", {
   command = "set formatoptions-=cro",
   group =  AUNVIM
 })
-AC("FileType", {
-  pattern = require("giga.lsp.lsp-list").ft_list,
-  command = "LspStart",
-  group = AUNVIM
-})
+-- AC("FileType", {
+--   pattern = require("giga.lsp.lsp-list").ft_list,
+--   command = "LspStart",
+--   group = AUNVIM
+-- })
 -- nvimtree
 AC("BufEnter", {
   pattern = "*",
