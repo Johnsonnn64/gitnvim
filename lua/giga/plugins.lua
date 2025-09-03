@@ -106,8 +106,8 @@ return require ('lazy').setup({
 
   { -- git signs
     'lewis6991/gitsigns.nvim',
-    opt = true,
-    cmd = 'Gitsigns',
+    -- opt = true,
+    -- cmd = 'Gitsigns',
     config = function()
       require 'giga.gitsigns'
     end
