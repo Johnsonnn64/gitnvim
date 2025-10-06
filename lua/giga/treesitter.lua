@@ -7,7 +7,7 @@ configs.setup {
   ensure_isntalled = 'maintained',
   sync_install = false,
   incremental_selection = {
-    enable = true,
+    enable = false,
     keymaps = {
       init_selection = "gnn",
       scope_incremental = "gsi",

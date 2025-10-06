@@ -53,7 +53,7 @@ vim.opt.shortmess:remove 'T'
 vim.cmd [[
   set whichwrap+=<,>,[,]
   function! FormatNumber() range
-    '<,'>s/^\([0-9]*\.\s*\)*/\=(line('.') - line("'<") + 1).'. ' 
+  '<,'>s/^\([0-9]*\.\s*\)*/\=(line('.') - line("'<") + 1).'. ' 
   endfunction
   command! -range FormatNumber call FormatNumber()
 ]]
