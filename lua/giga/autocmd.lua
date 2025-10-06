@@ -42,3 +42,10 @@ AC("BufEnter", {
 	end,
   group = AUNVIM
 })
+AC("FileType", {
+  pattern = "java",
+  callback = function(args)
+    require'giga.lsp.jdtls_setup'.setup();
+  end,
+  group = AUNVIM
+})

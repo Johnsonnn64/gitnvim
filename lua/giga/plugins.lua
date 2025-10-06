@@ -145,19 +145,25 @@ return require ('lazy').setup({
 
   { -- snippets
     'neovim/nvim-lspconfig',
-    dependencies = {
-      'williamboman/mason.nvim',
-      'williamboman/mason-lspconfig',
-    },
     config = function ()
       require 'giga.lspconfig'
     end,
   },
-
   {
-    'mfussenegger/nvim-jdtls',
-    ft = 'java',
+    'williamboman/mason.nvim',
+    opts = {}
   },
+  {
+    'williamboman/mason-lspconfig',
+    opts = {
+      automatic_enable = {
+        exclude = {
+          'jdtls'
+        }
+      }
+    }
+  },
+  'mfussenegger/nvim-jdtls',
 
   { -- telescope
     'nvim-telescope/telescope.nvim', -- fzf

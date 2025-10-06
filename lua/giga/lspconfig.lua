@@ -6,7 +6,7 @@ vim.lsp.enable({
   "clangd",
   "marksman",
   "pyright",
-  "jdtls",
+  -- "jdtls",
 })
 
 require ('giga.lsp.handlers').setup()

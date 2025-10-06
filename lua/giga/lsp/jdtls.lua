@@ -7,7 +7,7 @@ return {
   },
   init_options = {
     jvm_args = {},
-    workspace = "/home/runner/.cache/jdtls/workspace"
+    workspace = "/home/john/.cache/jdtls/workspace"
   },
   root_markers = {
     ".git",
