@@ -29,7 +29,6 @@ vim.g.maplocalleader = ' '
 
 return require ('lazy').setup({
 
-  'dstein64/vim-startuptime', -- startuptime measure
   'mbbill/undotree', -- undo tree
   { 'lukas-reineke/indent-blankline.nvim', main = "ibl" }, -- line in indentions 
 
