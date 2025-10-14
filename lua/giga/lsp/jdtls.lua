@@ -1,6 +1,6 @@
 return {
   cmd = {
-    "jdtls", "-configuration", "/home/runner/.cache/jdtls/config", "-data", "/home/runner/.cache/jdtls/workspace"
+    "jdtls", "-configuration", "/home/john/.cache/jdtls/config", "-data", "/home/john/.cache/jdtls/workspace"
   },
   filetypes = {
     "java"
