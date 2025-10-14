@@ -149,10 +149,12 @@ return require ('lazy').setup({
       require 'giga.lspconfig'
     end,
   },
+
   {
     'williamboman/mason.nvim',
     opts = {}
   },
+
   {
     'williamboman/mason-lspconfig',
     opts = {
@@ -163,7 +165,23 @@ return require ('lazy').setup({
       }
     }
   },
-  'mfussenegger/nvim-jdtls',
+
+  {
+    'mfussenegger/nvim-jdtls',
+    ft = 'java',
+  },
+
+  {
+    'mfussenegger/nvim-dap',
+    dependencies = {
+      'nvim-neotest/nvim-nio',
+      'rcarriga/nvim-dap-ui',
+      'theHamsta/nvim-dap-virtual-text'
+    },
+    config = function()
+      require 'giga.dap'
+    end
+  },
 
   { -- telescope
     'nvim-telescope/telescope.nvim', -- fzf
