@@ -16,7 +16,8 @@ end
 
 vim.keymap.set("n", "<Leader>Db", dap.toggle_breakpoint, {noremap = true, silent = true})
 vim.keymap.set("n", "<Leader>Dc", dap.continue, {noremap = true, silent = true})
-vim.keymap.set("n", "<Leader>Di", dap.step_into, {noremap = true, silent = true})
--- vim.keymap.set("n", "<Leader>Dq", dapui.close())
+vim.keymap.set("n", "<Leader>Dl", dap.step_into, {noremap = true, silent = true})
+vim.keymap.set("n", "<Leader>DD", dapui.open)
+vim.keymap.set("n", "<Leader>Dq", dapui.close)
 
 require("nvim-dap-virtual-text").setup()
