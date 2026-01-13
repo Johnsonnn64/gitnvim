@@ -3,6 +3,7 @@ local M = {}
 function M:setup()
   local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
   local workspace_dir = "/home/john/.cache/jdtls/workspace" .. project_name
+  local equinox_launcher = vim.fn.glob("/home/john/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_*", 1)
   local config = {
     -- The command that starts the language server
     -- See: https://github.com/eclipse/eclipse.jdt.ls#running-from-the-command-line
@@ -24,7 +25,8 @@ function M:setup()
       "java.base/java.lang=ALL-UNNAMED",
 
       "-jar",
-      "/home/john/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_1.7.0.v20250519-0528.jar",
+      equinox_launcher,
+      -- "/home/john/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_1.7.0.v20250519-0528.jar",
       -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                       ^^^^^^^^^^^^^^
       -- Must point to the                                                     Change this to
       -- eclipse.jdt.ls installation                                           the actual version
