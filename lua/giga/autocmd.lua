@@ -13,7 +13,7 @@ AC("BufRead", {
 })
 AC("FileType", {
   pattern = "markdown,org",
-  command = "setlocal nonumber norelativenumber concealcursor=nc",
+  command = "setlocal concealcursor=nc",
   group = AUNVIM
 })
 AC("BufWritePost", {

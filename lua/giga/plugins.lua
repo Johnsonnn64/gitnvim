@@ -228,6 +228,6 @@ return require ('lazy').setup({
   {
     'MeanderingProgrammer/render-markdown.nvim',
     dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
-    filetype = { 'markdown' },
+    ft = { 'markdown' },
   },
 })
