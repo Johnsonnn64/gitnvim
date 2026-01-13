@@ -8,21 +8,17 @@ lualine.setup {
     theme = "catppuccin",
     icons_enabled = true,
     component_separators = '|',
-    section_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' },
     globalstatus = true,
   },
 
   sections = {
-    lualine_a = {
-      { 'mode', separator = { left = '', right = '' }, right_padding = 2 },
-    },
+    lualine_a = { 'mode' },
     lualine_b = { 'filename' },
     lualine_c = { 'branch', 'diff' },
     lualine_x = { 'filetype', 'fileformat' },
     lualine_y = { 'progress' },
-    lualine_z = {
-      { 'location', separator = { left = '', right = '' } },
-    },
+    lualine_z = { 'location' },
   },
 
   inactive_sections = {
