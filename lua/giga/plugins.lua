@@ -225,6 +225,10 @@ return require ('lazy').setup({
     end
   },
 
+  -- todo comment highlights
   {
+    'folke/todo-comments.nvim',
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = { }
   },
 })
